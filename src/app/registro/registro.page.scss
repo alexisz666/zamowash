@@ -1,0 +1,148 @@
+.register-content {
+  --background: linear-gradient(to bottom, #34A853 50%, #F1F2F6 50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.register-container {
+  width: 100%;
+  max-width: 350px;
+  padding: 15px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.register-card {
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.register-header {
+  background: #34A853;
+  padding: 15px;
+  text-align: center;
+}
+
+.register-title {
+  font-size: 22px;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 5px;
+}
+
+.register-subtitle {
+  font-size: 12px;
+  color: #e5e7eb;
+  margin-bottom: 0;
+}
+
+.register-body {
+  background: #ffffff;
+  padding: 15px;
+}
+
+.form-item {
+  margin-bottom: 15px;
+  position: relative; // Para posicionar el ícono de mostrar/ocultar contraseña
+}
+
+.form-label {
+  color: #1e3a8a;
+  font-weight: 500;
+  font-size: 13px;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-input {
+  --color: #1e3a8a;
+  --padding-start: 10px;
+  --padding-end: 10px;
+  --border-radius: 8px;
+  --background: #f9fafb;
+  --border-width: 1px;
+  --border-style: solid;
+  --border-color: #d1d5db;
+  --padding-top: 8px;
+  --padding-bottom: 8px;
+  font-size: 13px;
+  --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+.form-input:focus {
+  --border-color: #3b82f6;
+  --box-shadow: 0 2px 8px rgba(59, 130, 246, 0.2);
+}
+
+.toggle-password {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #888;
+  cursor: pointer;
+}
+
+.submit-button {
+  --background: #9ca3af;
+  --background-activated: #6b7280;
+  --background-focused: #6b7280;
+  --background-hover: #6b7280;
+  --color: #ffffff;
+  --border-radius: 8px;
+  margin-top: 15px;
+  font-weight: bold;
+  text-transform: uppercase;
+  --box-shadow: 0 4px 6px rgba(156, 163, 175, 0.2);
+}
+
+.submit-button[disabled] {
+  --background: #9ca3af;
+  --color: #ffffff;
+  --box-shadow: none;
+}
+
+.forgot-password {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.forgot-link {
+  color: #3b82f6;
+  font-size: 12px;
+  text-decoration: none;
+}
+
+.forgot-link:hover {
+  text-decoration: underline;
+}
+
+.submit-button:hover {
+  transform: scale(1.05);
+  transition: transform 0.2s ease-in-out;
+}
+
+/* Estilos para la alerta personalizada */
+.custom-alert {
+  --background: #34A853; // Fondo verde
+  --color: #ffffff; // Texto blanco
+  --button-color: #ffffff; // Color del botón
+}
+
+.custom-alert .alert-head {
+  background: #34A853; // Fondo verde para el encabezado
+  color: #ffffff; // Texto blanco
+}
+
+.custom-alert .alert-message {
+  color: #ffffff; // Texto blanco
+}

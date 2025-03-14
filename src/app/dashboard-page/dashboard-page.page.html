@@ -1,0 +1,74 @@
+<ion-content class="dashboard-content">
+  <!-- Contenido principal -->
+  <div class="main-content">
+    <!-- Mensaje de bienvenida -->
+    <div class="welcome-section">
+      <h1 class="welcome-title">¡Bienvenido a ZamoWash!</h1>
+      <p class="welcome-text">Lava tu auto de manera rápida y eficiente.</p>
+    </div>
+
+    <!-- Botón para iniciar lavado -->
+    <div class="start-wash-section">
+      <ion-button expand="block" class="action-button" size="small" shape="round">
+        <ion-icon name="play-circle" slot="start"></ion-icon>
+        Iniciar Lavado
+      </ion-button>
+    </div>
+
+    <!-- Sección de servicios (rectángulos pequeños) -->
+    <div class="services-section">
+      <h2 class="services-title">Información Útil</h2>
+      <div class="services-grid">
+        <!-- Consulta horarios y costos -->
+        <div class="service-item" (click)="navigateToConsulta()">
+          <ion-icon name="information-circle" class="service-icon"></ion-icon>
+          <h3 class="service-title">Consulta</h3>
+          <p class="service-text">Horarios y costos</p>
+        </div>
+
+        <!-- Promociones -->
+        <div class="service-item">
+          <ion-icon name="pricetag" class="service-icon"></ion-icon>
+          <h3 class="service-title">Promociones</h3>
+          <p class="service-text">Ofertas especiales</p>
+        </div>
+
+        <!-- Soporte -->
+        <div class="service-item">
+          <ion-icon name="help-circle" class="service-icon"></ion-icon>
+          <h3 class="service-title">Soporte</h3>
+          <p class="service-text">¿Necesitas ayuda?</p>
+        </div>
+
+        <!-- Reservar lavado -->
+        <div class="service-item">
+          <ion-icon name="calendar" class="service-icon"></ion-icon>
+          <h3 class="service-title">Reservar</h3>
+          <p class="service-text">Reserva tu lavado</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>
+
+<!-- Menú inferior -->
+<ion-tabs>
+  <ion-tab-bar slot="bottom" class="tab-bar">
+    <ion-tab-button tab="home" class="tab-button">
+      <ion-icon name="home" class="tab-icon"></ion-icon>
+      <ion-label class="tab-label">Inicio</ion-label>
+    </ion-tab-button>
+    <ion-tab-button tab="ganancias" class="tab-button" (click)="navigateToGanancias()">
+      <ion-icon name="cash" class="tab-icon"></ion-icon>
+      <ion-label class="tab-label">Ganancias</ion-label>
+    </ion-tab-button>
+    <ion-tab-button tab="productos" class="tab-button" (click)="navigateToProductos()">
+      <ion-icon name="cube" class="tab-icon"></ion-icon>
+      <ion-label class="tab-label">Productos</ion-label>
+    </ion-tab-button>
+    <ion-tab-button tab="alertas" class="tab-button" (click)="navigateToAlertas()">
+      <ion-icon name="warning" class="tab-icon"></ion-icon>
+      <ion-label class="tab-label">Alertas</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>

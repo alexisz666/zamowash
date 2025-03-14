@@ -1,0 +1,71 @@
+<ion-content class="ganancias-content">
+  <div class="main-content">
+    <div class="welcome-section">
+      <h1 class="welcome-title">Mis Ganancias</h1>
+      <p class="welcome-text">Revisa tus ingresos por servicios y ventas de productos.</p>
+    </div>
+
+    <!-- Selector de período personalizado -->
+    <div class="filtros-section">
+      <div class="periodo-label">Selecciona período:</div>
+      <div class="selector-fecha">
+        <ion-button (click)="cambiarDia(-1)">
+          <ion-icon name="chevron-back"></ion-icon>
+        </ion-button>
+        <ion-label>{{ fechaActual | date: 'MMM y - dd' }}</ion-label>
+        <ion-button (click)="cambiarDia(1)">
+          <ion-icon name="chevron-forward"></ion-icon>
+        </ion-button>
+      </div>
+    </div>
+
+    <!-- Resumen de ganancias -->
+    <div class="resumen-section">
+      <!-- Total Productos -->
+      <div class="resumen-card">
+        <div class="card-icon"><ion-icon name="cart"></ion-icon></div>
+        <h2>Total Productos</h2>
+        <h3>{{ gananciasProductos | currency }}</h3>
+        <p>Últimas 24 horas</p>
+      </div>
+
+      <!-- Total Servicios -->
+      <div class="resumen-card">
+        <div class="card-icon"><ion-icon name="car"></ion-icon></div>
+        <h2>Total Servicios</h2>
+        <h3>{{ gananciasLavados | currency }}</h3>
+        <p>Últimas 24 horas</p>
+      </div>
+
+      <!-- Total Ingresos -->
+      <div class="resumen-card total-ingresos-card">
+        <div class="card-icon"><ion-icon name="cash"></ion-icon></div>
+        <h2>Total Ingresos</h2>
+        <h3>{{ totalGanancias | currency }}</h3>
+        <p>Últimas 24 horas</p>
+      </div>
+    </div>
+  </div>
+</ion-content>
+
+<!-- Menú inferior -->
+<ion-tabs>
+  <ion-tab-bar slot="bottom" class="tab-bar">
+    <ion-tab-button tab="home" class="tab-button" (click)="navigateToInicio()">
+      <ion-icon name="home" class="tab-icon"></ion-icon>
+      <ion-label class="tab-label">Inicio</ion-label>
+    </ion-tab-button>
+    <ion-tab-button tab="ganancias" class="tab-button active-tab" (click)="navigateToGanancias()">
+      <ion-icon name="cash" class="tab-icon"></ion-icon>
+      <ion-label class="tab-label">Ganancias</ion-label>
+    </ion-tab-button>
+    <ion-tab-button tab="productos" class="tab-button" (click)="navigateToProductos()">
+      <ion-icon name="cube" class="tab-icon"></ion-icon>
+      <ion-label class="tab-label">Productos</ion-label>
+    </ion-tab-button>
+    <ion-tab-button tab="alertas" class="tab-button" (click)="navigateToAlertas()">
+      <ion-icon name="warning" class="tab-icon"></ion-icon>
+      <ion-label class="tab-label">Alertas</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>

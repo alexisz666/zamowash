@@ -1,0 +1,36 @@
+<ion-content class="login-content">
+  <div class="login-container">
+    <div class="login-card">
+      <div class="login-header">
+        <h1 class="login-title">WELCOME TO ZAMOWASH</h1>
+        <p class="login-subtitle">Enter your details to continue</p>
+      </div>
+
+      <div class="login-body">
+        <form [formGroup]="formularioLogin" (ngSubmit)="onSubmit()">
+          <!-- Campo de Email -->
+          <div class="form-item">
+            <label class="form-label">Email</label>
+            <ion-input formControlName="correo" type="email" class="form-input"></ion-input>
+          </div>
+
+          <!-- Campo de Password -->
+          <div class="form-item">
+            <label class="form-label">Password</label>
+            <ion-input formControlName="password" type="password" class="form-input"></ion-input>
+          </div>
+
+          <!-- Botón de Sign In -->
+          <ion-button expand="full" type="submit" class="submit-button">
+            Sign In
+          </ion-button>
+        </form>
+
+        <!-- Enlace para "Forgot Password" -->
+        <div class="forgot-password">
+          <a href="#" class="forgot-link">Forgot Password?</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>

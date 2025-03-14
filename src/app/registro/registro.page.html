@@ -1,0 +1,62 @@
+<ion-content class="register-content">
+  <div class="register-container">
+    <ion-card class="register-card">
+      <!-- Encabezado -->
+      <ion-card-header class="register-header">
+        <ion-card-title class="register-title">Register</ion-card-title>
+        <ion-card-subtitle class="register-subtitle">Create an account to get started</ion-card-subtitle>
+      </ion-card-header>
+
+      <!-- Cuerpo del formulario -->
+      <ion-card-content class="register-body">
+        <form (ngSubmit)="register()">
+          <!-- Campo de Usuario -->
+          <div class="form-item">
+            <label class="form-label">Username</label>
+            <ion-input type="text" class="form-input" size="xs" [(ngModel)]="username" name="username" required></ion-input>
+          </div>
+
+          <!-- Campo de Email -->
+          <div class="form-item">
+            <label class="form-label">Email</label>
+            <ion-input type="email" class="form-input" size="xs" [(ngModel)]="email" name="email" required></ion-input>
+          </div>
+
+          <!-- Campo de Contraseña -->
+          <div class="form-item">
+            <label class="form-label">Password</label>
+            <ion-input [type]="showPassword ? 'text' : 'password'" class="form-input" size="xs" [(ngModel)]="password" name="password" required></ion-input>
+            <ion-icon
+              [name]="showPassword ? 'eye-off' : 'eye'"
+              class="toggle-password"
+              (click)="togglePasswordVisibility()"
+            ></ion-icon>
+          </div>
+
+          <!-- Campo de Confirmar Contraseña -->
+          <div class="form-item">
+            <label class="form-label">Confirm Password</label>
+            <ion-input [type]="showConfirmPassword ? 'text' : 'password'" class="form-input" size="xs" [(ngModel)]="confirmPassword" name="confirmPassword" required></ion-input>
+            <ion-icon
+              [name]="showConfirmPassword ? 'eye-off' : 'eye'"
+              class="toggle-password"
+              (click)="toggleConfirmPasswordVisibility()"
+            ></ion-icon>
+          </div>
+
+          <!-- Botón de Registro -->
+          <ion-button expand="full" class="submit-button" size="xs" type="submit">
+            Sign Up
+          </ion-button>
+        </form>
+
+        <!-- Enlace para iniciar sesión -->
+        <div class="forgot-password">
+          <ion-button fill="clear" class="forgot-link" size="xs" routerLink="/login">
+            Already have an account? Sign In
+          </ion-button>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>
