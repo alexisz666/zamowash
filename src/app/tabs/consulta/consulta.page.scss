@@ -1,0 +1,121 @@
+ion-content {
+  --background: #34a853; /* Fondo verde */
+  color: white; /* Texto blanco */
+  font-family: 'Arial', sans-serif;
+  padding: 16px; /* Padding general */
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 1rem; /* Reducir espacio debajo del título */
+
+  h1.titulo-pequeno {
+    font-size: 1.5rem; /* Tamaño del título más pequeño */
+    font-weight: bold;
+    color: white;
+    letter-spacing: 1px;
+    text-transform: uppercase; /* Convertir texto a mayúsculas */
+  }
+}
+
+.section.combined {
+  background: white;
+  border-radius: 15px; /* Bordes más redondeados */
+  padding: 1.5rem; /* Padding interno */
+  margin: 0 auto; /* Centrar el contenedor */
+  max-width: 400px; /* Ancho máximo */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efecto hover */
+  position: relative;
+  margin-top: 4rem; /* Aumentar margen superior para dar espacio al reloj */
+  margin-bottom: 2rem; /* Aumentar margen inferior para equilibrio */
+
+  &:hover {
+    transform: translateY(-5px); /* Efecto de levantar */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
+  }
+
+  .reloj-gigante {
+    position: absolute;
+    top: -55px; /* Mitad dentro, mitad fuera del contenedor */
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    border-radius: 50%;
+    padding: 1rem; /* Reducir padding para hacer el reloj más pequeño */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    z-index: 1; /* Asegurar que el reloj esté sobre el contenedor */
+  
+    .reloj-icon {
+      font-size: 4.9rem; /* Reducir tamaño del ícono */
+      color: #34a853; /* Icono verde */
+    }
+  }
+
+  .horario-info {
+    margin-top: 3rem; /* Ajustar espacio para el reloj */
+    text-align: center;
+    background: #f0f0f0; /* Fondo gris claro */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 1rem; /* Padding interno */
+    margin-bottom: 1rem; /* Reducir espacio inferior */
+
+    .horario-item {
+      margin-bottom: 0.5rem; /* Reducir margen inferior */
+
+      .dias {
+        font-size: 1rem; /* Texto más pequeño */
+        color: #34a853; /* Color verde para "Zamowash todos los días" */
+        margin-bottom: 0.25rem; /* Reducir margen inferior */
+        font-weight: bold;
+        white-space: nowrap; /* Evitar que el texto se divida en varias líneas */
+      }
+
+      .time {
+        font-size: 1rem; /* Texto más pequeño */
+        color: #666;
+      }
+    }
+  }
+
+  .costos {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem; /* Reducir espacio entre elementos */
+
+    .costo-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between; /* Alinear precio a la derecha */
+      background: #f0f0f0; /* Fondo gris claro */
+      border-radius: 10px; /* Aumentar bordes redondeados */
+      padding: 0.75rem; /* Reducir padding */
+      transition: all 0.3s ease;
+
+      .item-icon {
+        font-size: 1.5rem; /* Icono más pequeño */
+        color: #34a853; /* Icono verde */
+        margin-right: 0.75rem; /* Reducir margen derecho */
+      }
+
+      .item-info {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem; /* Reducir espacio entre icono y nombre del vehículo */
+
+        .vehicle-type {
+          font-size: 1rem; /* Texto más pequeño */
+          color: #333;
+          margin: 0;
+        }
+      }
+
+      .precio {
+        font-size: 1.25rem; /* Texto más pequeño */
+        font-weight: bold;
+        color: #ff6b6b; /* Texto rojo para el precio */
+        margin: 0;
+      }
+    }
+  }
+}

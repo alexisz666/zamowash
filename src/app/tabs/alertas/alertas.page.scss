@@ -1,0 +1,125 @@
+.alertas-content {
+  --background: #4caf50; /* Fondo verde suave */
+  --padding-top: 16px; /* Espaciado superior */
+}
+
+.alertas-header {
+  text-align: center;
+  margin-bottom: 20px;
+
+  h1 {
+    font-size: 24px;
+    font-weight: bold;
+    color: white; /* Texto blanco */
+  }
+
+  p {
+    color: white; /* Texto blanco */
+  }
+}
+
+.filtro-botones {
+  margin-bottom: 20px;
+
+  ion-segment {
+    --background: #ffffff; /* Fondo blanco */
+    border-radius: 15px; /* Bordes redondeados */
+    padding: 8px; /* Más padding interno */
+  }
+
+  ion-segment-button {
+    --color: #666; /* Texto gris */
+    --color-checked: #4caf50; /* Texto verde cuando está seleccionado */
+    --indicator-color: #81c784; /* Indicador verde claro */
+    border-radius: 10px; /* Bordes redondeados */
+    position: relative;
+    height: 48px; /* Altura aumentada */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    ion-badge {
+      position: absolute;
+      top: -8px; /* Ajusté la posición vertical (un poco más abajo) */
+      right: -10px; /* Ajusta la posición horizontal */
+      font-size: 14px; /* Tamaño de fuente más grande */
+      padding: 6px 8px; /* Más padding para que el badge sea más grande */
+      background-color: #f44336; /* Fondo rojo */
+      color: white; /* Texto blanco */
+      border: 2px solid white; /* Borde blanco para que destaque más */
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra para darle profundidad */
+      z-index: 1; /* Asegura que el badge esté por encima de otros elementos */
+    }
+  }
+}
+
+.alertas-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Grid flexible */
+  gap: 24px; /* Espacio entre alertas */
+  padding: 0 16px; /* Padding lateral */
+}
+
+.alerta-card {
+  background: white; /* Fondo blanco */
+  border-radius: 15px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+  margin: 0 0 24px 0; /* Añadí un margen inferior para separar las tarjetas */
+  padding: 16px; /* Padding interno */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efecto hover */
+  border-left: 8px solid; /* Borde lateral de color */
+
+  &.error {
+    border-left-color: #f44336; /* Rojo para errores */
+  }
+
+  &.warning {
+    border-left-color: #ffc107; /* Amarillo para advertencias */
+  }
+
+  &:hover {
+    transform: translateY(-5px); /* Efecto de levantar */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+  }
+
+  ion-card-header {
+    padding-bottom: 0;
+
+    ion-card-title {
+      font-size: 18px;
+      font-weight: bold;
+      color: #333; /* Texto gris oscuro */
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      .alerta-icon {
+        font-size: 24px;
+        color: #333; /* Color del ícono */
+      }
+    }
+  }
+
+  ion-card-content {
+    padding-top: 12px;
+
+    p {
+      font-size: 14px;
+      color: #666; /* Texto gris */
+      margin-bottom: 12px;
+    }
+
+    .tiempo {
+      font-size: 12px;
+      color: #666; /* Texto gris */
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: bold; /* Texto en negrita */
+
+      ion-icon {
+        color: #666; /* Color del ícono */
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+<ion-content class="dashboard-content">
+  <!-- Título -->
+  <div class="productos-header">
+    <h1>Productos Zamowash</h1>
+    <p>Explora nuestros productos para el cuidado de tu auto.</p>
+  </div>
+
+  <!-- Lista de productos -->
+  <div class="product-grid">
+    <!-- Producto -->
+    <div class="product-card" *ngFor="let producto of productos">
+      <ion-icon name="water" class="product-icon"></ion-icon>
+      <h2>{{ producto.nombre }}</h2>
+      <p>{{ producto.descripcion }}</p>
+      <p class="precio">Precio: ${{ producto.precio }}</p>
+      <p class="stock">Stock: {{ producto.stock }} unidades</p>
+      <ion-button expand="block" (click)="comprarProducto(producto)" [disabled]="producto.stock <= 0">
+        Comprar
+      </ion-button>
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,78 @@
+<ion-content class="reservar-content">
+  <div class="reservar-container">
+    <!-- Formulario de Reserva -->
+    <ion-card class="reservar-card">
+      <ion-card-header class="reservar-header">
+        <ion-card-title class="reservar-title">RESERVAR</ion-card-title>
+        <ion-card-subtitle class="reservar-subtitle">Selecciona el día y la hora para tu lavado.</ion-card-subtitle>
+      </ion-card-header>
+
+      <ion-card-content class="reservar-body">
+        <form [formGroup]="formulario" (ngSubmit)="reservar()">
+          <!-- Campos del formulario -->
+          <div class="form-item">
+            <label class="form-label">Día</label>
+            <ion-select class="form-input" formControlName="dia" interface="action-sheet">
+              <ion-select-option *ngFor="let dia of dias" [value]="dia">{{ dia }}</ion-select-option>
+            </ion-select>
+          </div>
+
+          <div class="form-item">
+            <label class="form-label">Mes</label>
+            <ion-select class="form-input" formControlName="mes" interface="action-sheet">
+              <ion-select-option *ngFor="let mes of meses" [value]="mes">{{ mes }}</ion-select-option>
+            </ion-select>
+          </div>
+
+          <div class="form-item">
+            <label class="form-label">Año</label>
+            <ion-select class="form-input" formControlName="anio" interface="action-sheet">
+              <ion-select-option *ngFor="let anio of anios" [value]="anio">{{ anio }}</ion-select-option>
+            </ion-select>
+          </div>
+
+          <div class="form-item">
+            <label class="form-label">Hora</label>
+            <ion-select class="form-input" formControlName="hora" interface="action-sheet">
+              <ion-select-option *ngFor="let hora of horas" [value]="hora">{{ hora }}</ion-select-option>
+            </ion-select>
+          </div>
+
+          <div class="form-item">
+            <label class="form-label">Tipo de carro</label>
+            <ion-select class="form-input" formControlName="tipoCarro" interface="action-sheet">
+              <ion-select-option value="Carro Sedan">Carro Sedan</ion-select-option>
+              <ion-select-option value="Carro SUV">Carro SUV</ion-select-option>
+              <ion-select-option value="Carro Pickup">Carro Pickup</ion-select-option>
+            </ion-select>
+          </div>
+
+          <!-- Botón de reservar -->
+          <ion-button expand="full" class="submit-button" type="submit" [disabled]="formulario.invalid">
+            Reservar
+          </ion-button>
+        </form>
+      </ion-card-content>
+    </ion-card>
+
+    <!-- Lista de Reservas -->
+    <ion-card class="reservas-card">
+      <ion-card-header class="reservas-header">
+        <ion-card-title class="reservas-title">Mis Reservas</ion-card-title>
+      </ion-card-header>
+      <ion-card-content class="reservas-body">
+        <div class="reservas-list">
+          <div *ngFor="let reserva of reservas" class="reserva-item">
+            <h2>{{ reserva.tipoCarro }}</h2>
+            <p>{{ reserva.dia }}/{{ reserva.mes }}/{{ reserva.anio }} - {{ reserva.hora }}</p>
+            <p [ngClass]="{
+              'estado-enviada': reserva.estado === 'Solicitud enviada',
+              'estado-aceptada': reserva.estado === 'Aceptada',
+              'estado-rechazada': reserva.estado === 'Rechazada'
+            }">Estado: {{ reserva.estado }}</p>
+          </div>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

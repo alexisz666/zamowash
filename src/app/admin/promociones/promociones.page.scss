@@ -1,0 +1,172 @@
+/* Fondo general de la página */
+ion-content {
+  --background: #1976d2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px;
+}
+
+/* Header sin línea y con fondo azul */
+ion-header {
+  background: #1976d2;
+  
+  ion-toolbar {
+    --background: transparent;
+    --border-width: 0 !important;
+    --border-style: none !important;
+    padding-top: 10px;
+
+    &::after {
+      display: none !important;
+    }
+  }
+}
+
+ion-title {
+  color: white;
+  font-size: 22px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+/* ... (el resto de tu SCSS permanece igual) ... */
+
+/* Contenedor principal */
+.promotions-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  margin-bottom: 16px;
+}
+
+/* Tarjeta de promociones */
+.promotions-card {
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background: #ffffff;
+  margin-bottom: 20px;
+
+  &:first-child {
+    .promotions-header {
+      background: #34a853; /* Verde para "Crear Promoción" */
+    }
+  }
+  
+  &:last-child {
+    .promotions-header {
+      background: #34a853; /* Azul para "Promociones Activas" */
+    }
+  }
+}
+
+/* Encabezado de la tarjeta */
+.promotions-header {
+  padding: 16px;
+  text-align: center;
+  border-radius: 12px 12px 0 0;
+}
+
+/* Título de la tarjeta */
+.promotions-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 5px;
+}
+
+/* Resto de tus estilos permanecen igual... */
+.promotions-body {
+  padding: 16px;
+}
+
+.promotions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.promotion-item {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+  }
+}
+
+/* ... (todos los demás estilos se mantienen igual) ... */
+.promotion-item h2 {
+  font-size: 16px; /* Tamaño de fuente */
+  font-weight: bold; /* Negrita */
+  color: #1e3a8a; /* Color azul oscuro */
+  margin: 0; /* Sin margen */
+}
+
+.promotion-item p {
+  font-size: 14px; /* Tamaño de fuente */
+  color: #4b5563; /* Color gris oscuro */
+  margin: 0; /* Sin margen */
+}
+
+/* Botones de acción */
+.promotion-buttons {
+  display: flex;
+  justify-content: flex-end; /* Alinear botones a la derecha */
+  gap: 8px; /* Espacio entre botones */
+}
+
+/* Restaurar estilos para el formulario de crear promoción */
+ion-item {
+  --background: #ffffff; /* Fondo blanco */
+  --border-radius: 8px; /* Bordes redondeados */
+  --padding-start: 10px;
+  --padding-end: 10px;
+  margin-bottom: 15px;
+
+  ion-label {
+      color: #1e3a8a; /* Color del texto del label */
+      font-weight: 500;
+      font-size: 14px;
+      margin-bottom: 8px; /* Espacio entre el label y el input */
+  }
+
+  ion-select, ion-input {
+      --background: #ffffff; /* Fondo blanco */
+      --color: #1e3a8a; /* Color del texto del input */
+      --padding-start: 10px;
+      --padding-end: 10px;
+      --border-radius: 8px; /* Bordes redondeados */
+      --border-width: 1px;
+      --border-style: solid;
+      --border-color: #d1d5db; /* Borde gris */
+      --padding-top: 8px;
+      --padding-bottom: 8px;
+      font-size: 14px;
+  }
+
+  ion-select:focus, ion-input:focus {
+      --border-color: #3b82f6; /* Borde azul al enfocar */
+      --box-shadow: 0 2px 8px rgba(59, 130, 246, 0.2); /* Sombra al enfocar */
+  }
+}
+
+/* Botón de crear promoción */
+ion-button {
+  --background: #4285f4; /* Fondo azul */
+  --color: #ffffff; /* Texto blanco */
+  --border-radius: 8px; /* Bordes redondeados */
+  --padding-top: 8px;
+  --padding-bottom: 8px;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  --box-shadow: 0 4px 6px rgba(66, 133, 244, 0.2); /* Sombra */
+  margin-top: 10px;
+}

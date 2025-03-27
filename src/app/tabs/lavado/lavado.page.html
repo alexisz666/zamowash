@@ -1,0 +1,53 @@
+<ion-content class="lavado-content">
+  <!-- Botón de cerrar sesión -->
+  <div class="logout-button-container">
+    <ion-button class="logout-button" fill="clear" (click)="cerrarSesion()">
+      <ion-icon name="log-out"></ion-icon>
+    </ion-button>
+  </div>
+
+  <!-- Título de la página -->
+  <div class="title-section">
+    <h1 class="welcome-title">Lavado en Progreso</h1>
+  </div>
+
+  <!-- Contenedor de animación -->
+  <div class="animation-container">
+    <!-- Barra de progreso con icono móvil -->
+    <div class="progress-container">
+      <div class="progress-bar">
+        <div class="progress" [ngStyle]="{'width': progreso + '%'}"></div>
+        <div class="vehicle-indicator" [ngStyle]="{'left': progreso + '%'}">
+          <ion-icon name="car-sport"></ion-icon>
+        </div>
+      </div>
+    </div>
+
+    <!-- Etapa actual -->
+    <div class="etapa-actual">
+      <p>{{ etapaActual }}</p>
+    </div>
+  </div>
+  <!-- Selección de vehículo -->
+  <div class="vehicle-selection">
+    <h2>Elige tu vehículo</h2>
+    <div class="select-container">
+      <ion-select
+        interface="action-sheet"
+        placeholder="Selecciona un vehículo"
+        (ionChange)="seleccionarVehiculo($event.detail.value)"
+      >
+        <ion-select-option value="Sedan">Carro Sedan</ion-select-option>
+        <ion-select-option value="SUV">Carro SUV</ion-select-option>
+        <ion-select-option value="Pickup">Carro Pickup</ion-select-option>
+      </ion-select>
+    </div>
+  </div>
+
+  <!-- Botón de iniciar lavado -->
+  <div class="button-section">
+    <ion-button expand="block" color="primary" size="small" (click)="iniciarLavado()" [disabled]="!vehiculoSeleccionado || lavadoIniciado">
+      Iniciar Lavado
+    </ion-button>
+  </div>
+</ion-content>

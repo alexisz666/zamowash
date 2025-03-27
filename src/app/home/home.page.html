@@ -1,34 +1,46 @@
 <ion-content class="welcome-content" fullscreen="true">
-  <div class="welcome-container">
-    <!-- Parte inferior gris -->
-    <div class="welcome-bottom">
-      <!-- Texto "Welcome to Zamowash" y eslogan dentro del contenedor de botones -->
-      <div class="welcome-text">
-        <h1 class="welcome-title">WELCOME TO ZAMOWASH</h1>
-        <p class="welcome-slogan">Your car, our care</p>
-      </div>
+  <ion-grid class="ion-justify-content-center ion-align-items-center ion-text-center" style="height: 100%;">
+    <ion-row class="ion-justify-content-center">
+      <ion-col size="auto" size-lg="6"> <!-- Cambiado a size="auto" -->
+        <div class="welcome-container"> <!-- Contenedor adicional -->
+          <ion-card class="welcome-bottom">
+            <ion-card-header class="welcome-text">
+              <ion-card-title class="welcome-title">WELCOME TO ZAMOWASH</ion-card-title>
+              <ion-card-subtitle class="welcome-slogan">Your car, our care</ion-card-subtitle>
+            </ion-card-header>
 
-      <!-- Botones de Sign In y Sign Up -->
-      <div class="welcome-buttons">
-        <ion-button expand="full" class="signin-button" (click)="goToLogin()">Sign In</ion-button>
-        <ion-button expand="full" class="signup-button" (click)="goToRegistro()">Sign Up</ion-button>
-      </div>
+            <ion-card-content class="welcome-buttons">
+              <ion-button expand="full" class="signin-button" size="xs" size-lg="lg" (click)="goToLogin()">Sign In</ion-button>
+              <ion-button expand="full" class="signup-button" size="xs" size-lg="lg" (click)="goToRegistro()">Sign Up</ion-button>
+            </ion-card-content>
 
-      <!-- Texto "Or connect using" -->
-      <p class="connect-text">Or connect using</p>
+            <ion-text class="connect-text">Or connect using</ion-text>
 
-      <!-- Iconos de redes sociales -->
-      <div class="social-icons">
-        <ion-button fill="clear" class="social-button">
-          <ion-icon name="logo-google"></ion-icon>
-        </ion-button>
-        <ion-button fill="clear" class="social-button">
-          <ion-icon name="logo-facebook"></ion-icon>
-        </ion-button>
-        <ion-button fill="clear" class="social-button">
-          <ion-icon name="phone-portrait"></ion-icon>
-        </ion-button>
-      </div>
-    </div>
-  </div>
+            <ion-row class="social-icons ion-justify-content-center">
+              <ion-col size="auto">
+                <ion-button 
+  fill="clear" 
+  class="social-button" 
+  size="xs" 
+  size-lg="lg"
+  (click)="loginWithGoogle()">  
+  <ion-icon name="logo-google"></ion-icon>
+</ion-button>
+              </ion-col>
+              <ion-col size="auto">
+                <ion-button fill="clear" class="social-button" size="xs" size-lg="lg">
+                  <ion-icon name="logo-facebook"></ion-icon>
+                </ion-button>
+              </ion-col>
+              <ion-col size="auto">
+                <ion-button fill="clear" class="social-button" size="xs" size-lg="lg">
+                  <ion-icon name="phone-portrait"></ion-icon>
+                </ion-button>
+              </ion-col>
+            </ion-row>
+          </ion-card>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

@@ -1,118 +1,102 @@
-/* Corregimos el fondo de ion-content */
+/* Fondo de ion-content */
 ion-content {
-    --ion-background-color: #34A853;
-}
-
-/* Si sigue sin aplicar el cambio, forzamos el fondo en .welcome-content */
-.welcome-content {
-    background-color: #34A853 !important;
+    --background: #34a853;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
-    overflow: hidden;
-}
-
-/* Contenedor principal */
-.welcome-container {
+    height: 100vh; /* Asegura que ocupe toda la altura de la pantalla */
+  }
+  
+  /* Contenedor adicional para centrar el contenido */
+  .welcome-container {
     width: 100%;
-    max-width: 350px;
-    padding: 15px;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-}
-
-/* Caja blanca donde están los botones */
-.welcome-bottom {
+    max-width: 600px; /* Aumenta el ancho máximo para escritorio */
+    margin: 0 auto; /* Centra el contenedor */
+  }
+  
+  /* Caja blanca con los elementos */
+  .welcome-bottom {
     background: #ffffff;
     border-radius: 20px;
-    padding: 18px;
+    padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 100%;
-}
-
-/* Texto de bienvenida */
-.welcome-text {
+    margin-top: 30%; /* Mueve el contenedor más hacia abajo en móvil */
+  
+    /* Ajustes de margen para móvil */
+    @media (max-width: 768px) {
+      margin-left: 16px; /* Margen izquierdo para móvil */
+      margin-right: 16px; /* Margen derecho para móvil */
+    }
+  
+    /* Ajustes de margen para escritorio */
+    @media (min-width: 992px) {
+      margin-top: 250px; /* Mueve el contenedor aún más hacia abajo en escritorio */
+      margin-left: auto; /* Centra horizontalmente */
+      margin-right: auto; /* Centra horizontalmente */
+      max-width: 600px; /* Asegúrate de que el contenedor tenga un ancho máximo adecuado */
+    }
+  }
+  
+  /* Texto de bienvenida */
+  .welcome-text {
     text-align: center;
-    margin-bottom: 15px;
-}
-
-.welcome-title {
-    font-size: 22px;
+    margin-bottom: 20px;
+  }
+  
+  .welcome-title {
+    font-size: 24px;
     font-weight: bold;
-    color: #34A853;
-    margin-bottom: 5px;
-}
-
-.welcome-slogan {
-    font-size: 13px;
+    color: #34a853;
+    margin-bottom: 8px;
+  }
+  
+  .welcome-slogan {
+    font-size: 14px;
     color: #615959c5;
-}
-
-/* Botones */
-.welcome-buttons {
-    margin-bottom: 15px;
-}
-
-.signin-button {
-    --background: #34A853;
-    --background-hover: #2E8B47;
+  }
+  
+  /* Botones */
+  .welcome-buttons {
+    margin-bottom: 20px;
+  }
+  
+  .signin-button {
+    --background: #34a853;
+    --background-hover: #2e8b47;
     --color: #ffffff;
     --border-radius: 8px;
     font-size: 14px;
-    margin-bottom: 8px;
-}
-
-.signup-button {
+    margin-bottom: 12px;
+  }
+  
+  .signup-button {
     --background: #ffffff;
-    --background-hover: #F1F2F6;
-    --color: #34A853;
+    --background-hover: #f1f2f6;
+    --color: #34a853;
     --border-radius: 8px;
     --border-width: 1px;
-    --border-color: #34A853;
+    --border-color: #34a853;
     font-size: 14px;
-}
-
-/* Texto "Or connect using" */
-.connect-text {
-    font-size: 11px;
+  }
+  
+  /* Texto "Or connect using" */
+  .connect-text {
+    font-size: 12px;
     color: #4b5563;
     text-align: center;
-    margin-bottom: 12px;
-}
-
-/* Iconos sociales */
-.social-icons {
+    margin-bottom: 16px;
+  }
+  
+  /* Iconos sociales */
+  .social-icons {
     display: flex;
     justify-content: center;
-    gap: 12px;
-}
-
-.social-button {
+    gap: 16px;
+  }
+  
+  .social-button {
     --background: transparent;
     --color: #615959c5;
     --border-radius: 50%;
     --padding: 8px;
-}
-
-/* Media queries */
-@media (max-width: 375px) {
-    .welcome-title {
-        font-size: 18px;
-    }
-
-    .welcome-slogan {
-        font-size: 11px;
-    }
-
-    .signin-button, .signup-button {
-        font-size: 12px;
-    }
-
-    .connect-text {
-        font-size: 10px;
-    }
-}
+  }

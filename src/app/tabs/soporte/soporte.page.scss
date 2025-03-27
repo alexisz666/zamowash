@@ -1,0 +1,231 @@
+.soporte-content {
+  --background: #34a853; /* Fondo verde sólido */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px;
+
+  /* Ajustes para escritorio (lg) */
+  @media (min-width: 992px) {
+    justify-content: center; /* Centra el contenido verticalmente */
+    min-height: 100vh; /* Ocupa toda la altura de la pantalla */
+  }
+}
+
+.soporte-container {
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 16px;
+
+  /* Ajustes para escritorio (lg) */
+  @media (min-width: 992px) {
+    max-width: 800px; /* Aumentamos el ancho máximo para escritorio */
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+  }
+}
+
+.soporte-card {
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background: #ffffff;
+
+  /* Ajustes para escritorio (lg) */
+  @media (min-width: 992px) {
+    padding: 24px; /* Más padding para que se vea más grande */
+  }
+}
+
+.soporte-header {
+  background: #34a853;
+  padding: 16px;
+  text-align: center;
+
+  /* Ajustes para escritorio (lg) */
+  @media (min-width: 992px) {
+    padding: 24px; /* Más padding para que se vea más grande */
+  }
+}
+
+.soporte-title {
+  font-size: 22px;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 5px;
+
+  /* Ajustes para escritorio (lg) */
+  @media (min-width: 992px) {
+    font-size: 28px; /* Título más grande */
+  }
+}
+
+.soporte-subtitle {
+  font-size: 12px;
+  color: #e5e7eb;
+  margin-bottom: 0;
+
+  /* Ajustes para escritorio (lg) */
+  @media (min-width: 992px) {
+    font-size: 16px; /* Subtítulo más grande */
+  }
+}
+
+.soporte-body {
+  padding: 16px;
+
+  /* Ajustes para escritorio (lg) */
+  @media (min-width: 992px) {
+    padding: 24px; /* Más padding para que se vea más grande */
+  }
+}
+
+.form-item {
+  margin-bottom: 16px;
+}
+
+.form-label {
+  color: #1e3a8a;
+  font-weight: 500;
+  font-size: 14px;
+  display: block;
+  margin-bottom: 8px;
+
+  /* Ajustes para escritorio (lg) */
+  @media (min-width: 992px) {
+    font-size: 16px; /* Etiqueta más grande */
+  }
+}
+
+.form-input {
+  --color: #1e3a8a;
+  --padding-start: 12px;
+  --padding-end: 12px;
+  --border-radius: 8px;
+  --background: #f9fafb;
+  --border-width: 1px;
+  --border-style: solid;
+  --border-color: #d1d5db;
+  --padding-top: 8px;
+  --padding-bottom: 8px;
+  font-size: 14px;
+  --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  /* Ajustes para escritorio (lg) */
+  @media (min-width: 992px) {
+    font-size: 16px; /* Texto más grande */
+  }
+}
+
+.submit-button {
+  --background: #4285f4;
+  --color: #ffffff;
+  --border-radius: 8px;
+  margin-top: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  --box-shadow: 0 4px 6px rgba(66, 133, 244, 0.2);
+
+  /* Ajustes para escritorio (lg) */
+  @media (min-width: 992px) {
+    font-size: 16px; /* Texto más grande */
+    --padding-top: 12px;
+    --padding-bottom: 12px;
+  }
+}
+
+/* Eliminar bordes y líneas de <ion-list> y <ion-item> */
+ion-list {
+  background: transparent;
+  padding: 0;
+}
+
+ion-item {
+  --background: transparent;
+  --border-color: transparent;
+  --padding-start: 0;
+  --padding-end: 0;
+  --inner-padding-end: 0;
+  --inner-border-width: 0;
+  --border-width: 0;
+  --min-height: auto;
+  margin-bottom: 16px; /* Espacio entre solicitudes */
+}
+
+/* Estilos personalizados para las solicitudes */
+.solicitud-item {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+  }
+
+  /* Ajustes para escritorio (lg) */
+  @media (min-width: 992px) {
+    padding: 24px; /* Más padding para que se vea más grande */
+  }
+}
+
+/* Estilos para la información de la solicitud */
+.solicitud-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  /* Ajustes para escritorio (lg) */
+  @media (min-width: 992px) {
+    gap: 12px; /* Más espacio entre elementos */
+  }
+}
+
+.solicitud-info h2 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #1e3a8a; /* Azul oscuro para títulos */
+  margin: 0;
+
+  /* Ajustes para escritorio (lg) */
+  @media (min-width: 992px) {
+    font-size: 24px; /* Título más grande */
+  }
+}
+
+.solicitud-info p {
+  font-size: 14px;
+  color: #555; /* Gris oscuro para texto */
+  margin: 0;
+
+  /* Ajustes para escritorio (lg) */
+  @media (min-width: 992px) {
+    font-size: 16px; /* Texto más grande */
+  }
+}
+
+.solicitud-info .solicitud-estado {
+  font-size: 14px;
+  font-weight: bold;
+  color: #34a853; /* Verde para el estado */
+
+  /* Ajustes para escritorio (lg) */
+  @media (min-width: 992px) {
+    font-size: 16px; /* Texto más grande */
+  }
+}
+
+/* Estilos para los badges (etiquetas) */
+ion-badge {
+  --padding: 6px 10px; /* Espaciado interno */
+  --border-radius: 12px; /* Bordes redondeados */
+  font-size: 12px; /* Tamaño del texto */
+  font-weight: bold; /* Texto en negrita */
+  text-transform: uppercase; /* Texto en mayúsculas */
+  margin-left: 8px;
+
+  /* Ajustes para escritorio (lg) */
+  @media (min-width: 992px) {
+    font-size: 14px; /* Texto más grande */
+  }
+}

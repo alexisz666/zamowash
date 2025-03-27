@@ -1,0 +1,70 @@
+<ion-content class="compras-content">
+  <!-- Título -->
+  <div class="compras-header">
+    <h1>Mis Compras</h1>
+    <p>Revisa el historial de tus compras y servicios de lavado.</p>
+  </div>
+
+  <!-- Botones de filtro -->
+  <div class="filtro-botones">
+    <ion-segment (ionChange)="cambiarFiltro($event)" value="productos">
+      <ion-segment-button value="productos">
+        <ion-label>Productos</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="lavados">
+        <ion-label>Servicios de Lavado</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+  <!-- Lista de compras -->
+  <div class="compras-list">
+    <!-- Compras de Productos -->
+    <div *ngIf="mostrar === 'productos'">
+      <ion-card *ngFor="let compra of comprasProductos">
+        <ion-card-header>
+          <ion-card-title>Compra #{{ compra._id }}</ion-card-title>
+          <ion-card-subtitle>Fecha: {{ compra.fecha | date }}</ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+          <p>Total: ${{ compra.total }}</p>
+          <div class="productos-list">
+            <h3>Productos:</h3>
+            <ion-list>
+              <ion-item *ngFor="let producto of compra.productos">
+                <ion-label>
+                  <h2>{{ producto.productoId.nombre }}</h2>
+                  <p>{{ producto.cantidad }} x ${{ producto.precioUnitario }}</p>
+                </ion-label>
+              </ion-item>
+            </ion-list>
+          </div>
+        </ion-card-content>
+      </ion-card>
+    </div>
+
+    <!-- Servicios de Lavado -->
+    <div *ngIf="mostrar === 'lavados'">
+      <ion-card *ngFor="let compra of comprasLavados">
+        <ion-card-header>
+          <ion-card-title>Compra #{{ compra._id }}</ion-card-title>
+          <ion-card-subtitle>Fecha: {{ compra.fecha | date }}</ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+          <p>Total: ${{ compra.total }}</p>
+          <div class="servicios-list">
+            <h3>Servicios de Lavado:</h3>
+            <ion-list>
+              <ion-item *ngFor="let servicio of compra.servicios">
+                <ion-label>
+                  <h2>{{ servicio.tipoCarro }}</h2>
+                  <p>${{ servicio.precio }}</p>
+                </ion-label>
+              </ion-item>
+            </ion-list>
+          </div>
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </div>
+</ion-content>

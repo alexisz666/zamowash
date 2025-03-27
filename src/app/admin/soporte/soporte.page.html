@@ -1,0 +1,41 @@
+<ion-content class="soporte-content">
+  <div class="soporte-container">
+    <!-- Título de la página -->
+    <div class="header-title">
+      <h1 class="titulo-soporte">SOLICITUDES DE SOPORTE</h1>
+    </div>
+
+    <!-- Lista de solicitudes de soporte -->
+    <ion-card *ngFor="let request of supportRequests" class="solicitud-card">
+      <ion-card-header class="solicitud-header">
+        <!-- CAMBIO 1: Email y nombre intercambiados -->
+        <ion-card-subtitle class="correo">{{ request.correo }}</ion-card-subtitle>
+        <ion-card-title class="nombre">{{ request.nombre }}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content class="solicitud-content">
+        <div class="datos-en-linea">
+          <span class="tipo"><strong>Tipo:</strong> {{ request.tipo }}</span>
+          <span class="fecha"><strong>Fecha:</strong> {{ request.fecha | date }}</span>
+          <span class="estado" [ngClass]="{
+            'estado-pendiente': request.estado === 'pendiente',
+            'estado-proceso': request.estado === 'en proceso',
+            'estado-resuelta': request.estado === 'resuelta'
+          }">
+            <strong>Estado:</strong> {{ request.estado }}
+          </span>
+        </div>
+        
+        <p class="detalles"><strong>Detalles:</strong> {{ request.detalles }}</p>
+        
+        <div *ngIf="request.respuesta" class="respuesta">
+          <strong>Respuesta:</strong> {{ request.respuesta }}
+        </div>
+
+        <ion-button expand="full" class="btn-responder" 
+          (click)="responderSolicitud(request._id)">
+          Responder
+        </ion-button>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

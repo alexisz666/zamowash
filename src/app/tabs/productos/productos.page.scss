@@ -1,0 +1,86 @@
+.dashboard-content {
+  --background: #4caf50; /* Fondo verde */
+  padding-bottom: 60px; /* Espacio para el menú inferior fijo */
+}
+
+.productos-header {
+  text-align: center;
+  margin-top: 16px;
+  margin-bottom: 16px;
+
+  h1 {
+    font-size: 28px; /* Tamaño del título */
+    font-weight: bold;
+    color: #ffffff; /* Texto blanco */
+  }
+
+  p {
+    font-size: 16px; /* Tamaño del texto */
+    color: #e0e0e0; /* Texto gris claro */
+  }
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Grid adaptable */
+  gap: 20px; /* Espacio entre productos */
+  padding: 16px; /* Padding general */
+}
+
+.product-card {
+  background: #ffffff; /* Fondo blanco */
+  border-radius: 15px; /* Bordes redondeados */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra más pronunciada */
+  text-align: center;
+  padding: 20px; /* Espaciado interno */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 2px solid #42a5f5; /* Borde azul suave */
+
+  &:hover {
+    transform: translateY(-5px); /* Efecto de elevación */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más grande al pasar el mouse */
+  }
+
+  .product-icon {
+    font-size: 32px; /* Tamaño del icono */
+    color: #7e57c2; /* Color morado suave para el icono */
+    margin-bottom: 12px; /* Espacio debajo del icono */
+  }
+
+  h2 {
+    font-size: 20px; /* Tamaño del título */
+    font-weight: bold;
+    color: #424242; /* Texto gris oscuro */
+    margin-bottom: 12px; /* Espacio debajo del título */
+  }
+
+  p {
+    font-size: 14px; /* Tamaño del texto */
+    color: #757575; /* Texto gris claro */
+    margin-bottom: 12px; /* Espacio debajo del texto */
+  }
+
+  .precio {
+    font-size: 18px; /* Tamaño del precio */
+    font-weight: bold;
+    color: #4caf50; /* Color verde para el precio */
+    margin: 0; /* Sin margen */
+  }
+
+  .stock {
+    font-size: 14px; /* Tamaño del stock */
+    color: #757575; /* Texto gris claro */
+    margin-bottom: 16px; /* Espacio debajo del stock */
+  }
+
+  ion-button {
+    --background: #42a5f5; /* Fondo azul suave */
+    --color: #ffffff; /* Texto blanco */
+    --border-radius: 8px; /* Bordes redondeados */
+    font-size: 14px; /* Tamaño del texto */
+    font-weight: bold;
+    text-transform: uppercase;
+    --box-shadow: 0 4px 6px rgba(66, 165, 245, 0.2); /* Sombra */
+    margin-top: 12px; /* Espacio superior */
+  }
+}

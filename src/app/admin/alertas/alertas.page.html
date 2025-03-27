@@ -1,0 +1,71 @@
+<ion-content class="alertas-content">
+  <!-- Título de la página -->
+  <div class="header-title">
+    <h1 class="titulo-alertas">ALERTAS SENSORES</h1>
+  </div>
+
+  <!-- Lista de alertas -->
+  <ion-card class="alertas-card">
+    <ion-card-content>
+      <!-- Sección de líquidos -->
+      <div class="seccion-alertas">
+        <h2 class="titulo-seccion">Sensores de Líquidos</h2>
+        
+        <ion-list lines="none">
+          <ion-item *ngFor="let alert of liquidAlerts; let i = index" class="alerta-item">
+            <div class="alerta-container">
+              <ion-icon [name]="alert.icon" class="icono-alerta" [color]="alert.enProgreso ? 'warning' : 'danger'"></ion-icon>
+              <div class="info-alerta">
+                <h3>{{ alert.title }}</h3>
+                <p [class]="alert.enProgreso ? 'mensaje-progreso' : 'mensaje-normal'">
+                  {{ alert.message }}
+                  <span *ngIf="alert.enProgreso" class="info-progreso">
+                    (En progreso: {{ alert.responsable }} - {{ alert.motivo }})
+                  </span>
+                </p>
+              </div>
+              <div class="acciones-alerta">
+                <ion-button fill="clear" (click)="responderAlerta('liquidAlerts', i)" class="btn-resolver">
+                  <ion-icon name="checkmark-circle" color="success"></ion-icon>
+                </ion-button>
+                <ion-button fill="clear" (click)="marcarEnProgreso('liquidAlerts', i)" class="btn-progreso">
+                  <ion-icon name="time" color="warning"></ion-icon>
+                </ion-button>
+              </div>
+            </div>
+          </ion-item>
+        </ion-list>
+      </div>
+
+      <!-- Sección de otros sensores -->
+      <div class="seccion-alertas">
+        <h2 class="titulo-seccion">Otros Sensores</h2>
+        
+        <ion-list lines="none">
+          <ion-item *ngFor="let alert of otherAlerts; let i = index" class="alerta-item">
+            <div class="alerta-container">
+              <ion-icon [name]="alert.icon" class="icono-alerta" [color]="alert.enProgreso ? 'warning' : 'danger'"></ion-icon>
+              <div class="info-alerta">
+                <h3>{{ alert.title }}</h3>
+                <p [class]="alert.enProgreso ? 'mensaje-progreso' : 'mensaje-normal'">
+                  {{ alert.message }}
+                  <span *ngIf="alert.enProgreso" class="info-progreso">
+                    (En progreso: {{ alert.responsable }} - {{ alert.motivo }})
+                  </span>
+                </p>
+              </div>
+              <div class="acciones-alerta">
+                <ion-button fill="clear" (click)="responderAlerta('otherAlerts', i)" class="btn-resolver">
+                  <ion-icon name="checkmark-circle" color="success"></ion-icon>
+                </ion-button>
+                <ion-button fill="clear" (click)="marcarEnProgreso('otherAlerts', i)" class="btn-progreso">
+                  <ion-icon name="time" color="warning"></ion-icon>
+                </ion-button>
+              </div>
+            </div>
+          </ion-item>
+        </ion-list>
+      </div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

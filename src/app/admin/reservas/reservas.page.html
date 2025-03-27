@@ -1,0 +1,50 @@
+<ion-content class="reservas-content">
+  <div class="reservas-container">
+    <!-- Título de la página -->
+    <div class="header-title">
+      <h1 class="titulo-reservas">SOLICITUDES DE RESERVA</h1>
+    </div>
+
+    <!-- Lista de Reservas -->
+    <ion-card class="reservas-card">
+      <ion-card-header class="reservas-header">
+        <ion-card-title class="reservas-title">Reservas de Clientes</ion-card-title>
+      </ion-card-header>
+      <ion-card-content class="reservas-body">
+        <ion-list>
+          <ion-item *ngFor="let reserva of reservas" class="reserva-item">
+            <ion-label class="info-linea">
+              <h2>{{ reserva.tipoCarro }}</h2>
+              <div class="datos-en-linea">
+                <span class="cliente">Cliente: {{ reserva.userId.username }}</span>
+                <span class="fecha">Fecha: {{ reserva.dia }}/{{ reserva.mes }}/{{ reserva.anio }}</span>
+                <span class="hora">Hora: {{ reserva.hora }}</span>
+                <span class="estado" [ngClass]="{
+                  'estado-pendiente': reserva.estado === 'Solicitud enviada',
+                  'estado-aceptada': reserva.estado === 'Aceptada',
+                  'estado-rechazada': reserva.estado === 'Rechazada'
+                }">
+                  Estado: {{ reserva.estado }}
+                </span>
+              </div>
+            </ion-label>
+            <ion-buttons slot="end" class="botones-accion">
+              <ion-button *ngIf="reserva.estado === 'Solicitud enviada'" fill="clear" class="btn-aceptar" 
+                (click)="confirmarCambioEstado(reserva._id, 'Aceptada')">
+                <ion-icon name="checkmark-circle-outline" color="success"></ion-icon>
+              </ion-button>
+              <ion-button *ngIf="reserva.estado === 'Solicitud enviada'" fill="clear" class="btn-rechazar" 
+                (click)="confirmarCambioEstado(reserva._id, 'Rechazada')">
+                <ion-icon name="close-circle-outline" color="danger"></ion-icon>
+              </ion-button>
+              <div *ngIf="reserva.estado !== 'Solicitud enviada'" class="accion-realizada">
+                <ion-icon [name]="reserva.estado === 'Aceptada' ? 'checkmark-done' : 'close'" 
+                  [color]="reserva.estado === 'Aceptada' ? 'success' : 'danger'"></ion-icon>
+              </div>
+            </ion-buttons>
+          </ion-item>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

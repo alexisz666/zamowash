@@ -1,0 +1,16 @@
+/* Inferior */
+.tab-bar {
+    --background: white;
+    --color: #7f8c8d;
+    --color-selected: #34A853;
+    border-top: 1px solid #e0e0e0;
+  
+    ion-tab-button {
+      &.active-tab {
+        ion-icon, ion-label {
+          color: var(--color-selected);
+          font-weight: 500;
+        }
+      }
+    }
+  }

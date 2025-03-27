@@ -1,50 +1,71 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { RoleGuard } from './guards/role.guard';
 
 const routes: Routes = [
   {
     path: '',
     redirectTo: 'home',
-    pathMatch: 'full'
-  },
-  {
-    path: 'login',
-    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
-  },
-  {
-    path: 'registro',
-    loadChildren: () => import('./registro/registro.module').then( m => m.RegistroPageModule)
+    pathMatch: 'full',
   },
   {
     path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+    loadChildren: () => import('./home/home.module').then((m) => m.HomePageModule),
   },
   {
-    path: 'dashboard-page',
-    loadChildren: () => import('./dashboard-page/dashboard-page.module').then( m => m.DashboardPagePageModule)
+    path: 'login',
+    loadChildren: () => import('./tabs/login/login.module').then((m) => m.LoginPageModule),
   },
   {
-    path: 'consulta',
-    loadChildren: () => import('./consulta/consulta.module').then( m => m.ConsultaPageModule)
+    path: 'registro',
+    loadChildren: () => import('./tabs/registro/registro.module').then((m) => m.RegistroPageModule),
   },
   {
-    path: 'ganancias',
-    loadChildren: () => import('./ganancias/ganancias.module').then( m => m.GananciasPageModule)
+    path: 'tabs',
+    loadChildren: () => import('./tabs/tabs.module').then((m) => m.TabsPageModule),
+    canActivate: [RoleGuard],
+    data: { expectedRole: 'cliente' },
   },
   {
-    path: 'productos',
-    loadChildren: () => import('./productos/productos.module').then( m => m.ProductosPageModule)
+    path: 'admin',
+    loadChildren: () => import('./admin/admin-tabs/admin-tabs.module').then((m) => m.AdminTabsPageModule),
+    canActivate: [RoleGuard],
+    data: { expectedRole: 'admin' }
+  },
+  // Redirecciones para mantener compatibilidad
+  {
+    path: 'admin/dashboard',
+    redirectTo: 'admin/dashboard',
+    pathMatch: 'full'
   },
   {
-    path: 'alertas',
-    loadChildren: () => import('./alertas/alertas.module').then( m => m.AlertasPageModule)
+    path: 'admin/modificar',
+    redirectTo: 'admin/modificar',
+    pathMatch: 'full'
+  },
+  {
+    path: 'admin/promociones',
+    redirectTo: 'admin/promociones',
+    pathMatch: 'full'
+  },
+  {
+    path: 'admin/soporte',
+    redirectTo: 'admin/soporte',
+    pathMatch: 'full'
+  },
+  {
+    path: 'admin/reservas',
+    redirectTo: 'admin/reservas',
+    pathMatch: 'full'
+  },
+  {
+    path: '**',
+    redirectTo: 'home',
   },
 ];
 
 @NgModule({
-  imports: [
-    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
-  ],
-  exports: [RouterModule]
+  imports: [RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })],
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

@@ -1,0 +1,153 @@
+.lavado-content {
+  --background: #34a853; /* Fondo verde consistente */
+  position: relative;
+  padding: 16px;
+}
+
+.logout-button-container {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 10;
+}
+
+.logout-button {
+  --color: #ffffff;
+  --background: transparent;
+  --padding-start: 0;
+  --padding-end: 0;
+  --padding-top: 0;
+  --padding-bottom: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+
+  ion-icon {
+    font-size: 24px;
+  }
+
+  &:hover {
+    --background: rgba(255, 255, 255, 0.1);
+  }
+}
+
+.title-section {
+  text-align: center;
+  margin-bottom: 2rem; /* Más espacio debajo del título */
+
+  .welcome-title {
+    font-size: 2rem; /* Tamaño del título más grande */
+    font-weight: bold;
+    color: white;
+    letter-spacing: 1px;
+  }
+}
+.animation-container {
+  background: white;
+  border-radius: 15px;
+  padding: 1.5rem;
+  margin: 0 auto;
+  max-width: 400px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 2rem;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  }
+}
+
+/* Nuevos estilos para la barra de progreso con icono móvil */
+.progress-container {
+  width: 100%;
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 10px;
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  position: relative;
+  margin-top: 3rem; /* Espacio para el icono */
+}
+
+.progress {
+  height: 100%;
+  background-color: #34a853;
+  transition: width 0.5s ease;
+  border-radius: 5px;
+}
+
+.vehicle-indicator {
+  position: absolute;
+  top: -30px;
+  transform: translateX(-50%);
+  transition: left 0.5s ease;
+  z-index: 2;
+
+  ion-icon {
+    font-size: 3rem;
+    color: #34a853;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+  }
+}
+
+/* Estilos para las etapas del lavado */
+.etapa-actual {
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #34a853;
+  margin-top: 1rem;
+}
+.vehicle-selection {
+  text-align: center;
+  margin-bottom: 2rem; /* Espacio inferior */
+
+  h2 {
+    font-size: 1.5rem; /* Tamaño del título más grande */
+    color: white;
+    margin-bottom: 1rem; /* Espacio inferior */
+  }
+
+  .select-container {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 1rem; /* Padding interno */
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+
+    ion-select {
+      width: 100%;
+      color: white;
+    }
+  }
+}
+
+.button-section {
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+
+  ion-button {
+    width: 100%;
+    font-size: 1rem; /* Tamaño del texto */
+    font-weight: bold;
+    --background: #34a853; /* Fondo verde */
+    --background-activated: #2d8c4a; /* Fondo verde oscuro al presionar */
+    --color: white; /* Texto blanco */
+    --border-radius: 10px; /* Bordes redondeados */
+    --box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efecto hover */
+
+    &:hover {
+      transform: translateY(-3px); /* Efecto de levantar */
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
+    }
+  }
+}

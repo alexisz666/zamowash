@@ -1,0 +1,157 @@
+<ion-content class="ganancias-content">
+  <!-- Título de la página -->
+  <div class="header-title">
+    <h1 class="titulo-ganancias">REPORTE DE GANANCIAS</h1>
+  </div>
+
+  <!-- Contenedor principal -->
+  <ion-card class="ganancias-card">
+    <ion-card-content>
+      <!-- Selector de período -->
+      <div class="periodo-selector">
+        <h2 class="titulo-seccion">Selecciona el período</h2>
+        
+        <ion-item class="selector-item">
+          <ion-label>Periodo</ion-label>
+          <ion-select [(ngModel)]="periodoSeleccionado" interface="action-sheet" (ionChange)="onPeriodoChange()">
+            <ion-select-option value="dia">Día</ion-select-option>
+            <ion-select-option value="semana">Semana</ion-select-option>
+            <ion-select-option value="mes">Mes</ion-select-option>
+            <ion-select-option value="año">Año</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <!-- Selectores dinámicos -->
+        <div *ngIf="periodoSeleccionado === 'dia'" class="selectores-dinamicos">
+          <ion-item class="selector-item">
+            <ion-label>Mes</ion-label>
+            <ion-select [(ngModel)]="mesSeleccionado">
+              <ion-select-option *ngFor="let mes of meses" [value]="mes.value">
+                {{ mes.nombre }}
+              </ion-select-option>
+            </ion-select>
+          </ion-item>
+          
+          <ion-item class="selector-item">
+            <ion-label>Día</ion-label>
+            <ion-select [(ngModel)]="diaSeleccionado">
+              <ion-select-option *ngFor="let dia of dias" [value]="dia">
+                {{ dia }}
+              </ion-select-option>
+            </ion-select>
+          </ion-item>
+        </div>
+
+        <div *ngIf="periodoSeleccionado === 'semana'" class="selectores-dinamicos">
+          <ion-item class="selector-item">
+            <ion-label>Semana</ion-label>
+            <ion-select [(ngModel)]="semanaSeleccionada">
+              <ion-select-option *ngFor="let semana of semanas" [value]="semana">
+                Semana {{ semana }}
+              </ion-select-option>
+            </ion-select>
+          </ion-item>
+        </div>
+
+        <div *ngIf="periodoSeleccionado === 'mes'" class="selectores-dinamicos">
+          <ion-item class="selector-item">
+            <ion-label>Mes</ion-label>
+            <ion-select [(ngModel)]="mesSeleccionado">
+              <ion-select-option *ngFor="let mes of meses" [value]="mes.value">
+                {{ mes.nombre }}
+              </ion-select-option>
+            </ion-select>
+          </ion-item>
+        </div>
+
+        <div *ngIf="periodoSeleccionado === 'año'" class="selectores-dinamicos">
+          <ion-item class="selector-item">
+            <ion-label>Año</ion-label>
+            <ion-note>2025</ion-note>
+          </ion-item>
+        </div>
+      </div>
+
+      <!-- Botón para calcular -->
+      <ion-button expand="block" (click)="calcularGanancias()" class="btn-calcular">
+        Generar Reporte
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Resumen de ganancias -->
+  <div class="resumen-section" *ngIf="mostrarResumen">
+    <h2 class="titulo-seccion">Resumen de Ganancias</h2>
+    
+    <!-- Tarjeta de Productos -->
+    <ion-card class="resumen-card productos">
+      <ion-card-content>
+        <div class="card-content">
+          <ion-icon name="cart" class="card-icon"></ion-icon>
+          <div class="card-info">
+            <h3>Total Productos</h3>
+            <p>{{ totalProductos | number }} ventas</p>
+            <div class="card-amount">${{ totalProductos * 10 | number }}</div>
+          </div>
+        </div>
+      </ion-card-content>
+    </ion-card>
+
+    <!-- Tarjeta de Servicios -->
+    <ion-card class="resumen-card servicios">
+      <ion-card-content>
+        <div class="card-content">
+          <ion-icon name="car" class="card-icon"></ion-icon>
+          <div class="card-info">
+            <h3>Total Servicios</h3>
+            <p>{{ totalServicios | number }} lavados</p>
+            <div class="card-amount">${{ totalServicios * 15 | number }}</div>
+          </div>
+        </div>
+      </ion-card-content>
+    </ion-card>
+
+    <!-- Tarjeta de Ingresos -->
+    <ion-card class="resumen-card ingresos">
+      <ion-card-content>
+        <div class="card-content">
+          <ion-icon name="wallet" class="card-icon"></ion-icon>
+          <div class="card-info">
+            <h3>Ingresos Totales</h3>
+            <p>Suma de todos los ingresos</p>
+            <div class="card-amount total">${{ totalIngresos | number }}</div>
+          </div>
+        </div>
+      </ion-card-content>
+    </ion-card>
+
+    <!-- Gráfico de tendencias -->
+    <ion-card class="grafico-card">
+      <ion-card-header>
+        <ion-card-title>Tendencia de Ganancias</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <!-- Aquí iría tu gráfico (puedes usar Chart.js, Highcharts, etc.) -->
+        <div class="grafico-placeholder">
+          <ion-icon name="bar-chart" class="grafico-icon"></ion-icon>
+          <p>Visualización de tendencia</p>
+        </div>
+      </ion-card-content>
+    </ion-card>
+
+    <!-- Detalle por categoría -->
+    <ion-card class="detalle-card">
+      <ion-card-header>
+        <ion-card-title>Detalle por Categoría</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-list>
+          <ion-item *ngFor="let categoria of categorias">
+            <ion-label>{{ categoria.nombre }}</ion-label>
+            <ion-note slot="end">${{ categoria.monto | number }}</ion-note>
+          </ion-item>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

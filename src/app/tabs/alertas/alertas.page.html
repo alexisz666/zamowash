@@ -1,0 +1,62 @@
+<ion-content class="alertas-content">
+  <!-- Encabezado -->
+  <div class="alertas-header">
+    <h1>ALERTAS URGENTES</h1>
+    <p>Revisa las alertas que requieren atención inmediata.</p>
+  </div>
+
+  <!-- Botones de filtro -->
+  <div class="filtro-botones">
+    <ion-segment (ionChange)="cambiarFiltro($event)" value="liquid">
+      <ion-segment-button value="liquid">
+        <ion-label>Sensores de Líquidos</ion-label>
+        <ion-badge *ngIf="liquidAlerts.length > 0" color="danger">{{ liquidAlerts.length }}</ion-badge>
+      </ion-segment-button>
+      <ion-segment-button value="other">
+        <ion-label>Otros Sensores</ion-label>
+        <ion-badge *ngIf="otherAlerts.length > 0" color="danger">{{ otherAlerts.length }}</ion-badge>
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+  <!-- Lista de alertas -->
+  <div class="alertas-list">
+    <!-- Alertas de líquidos -->
+    <div *ngIf="mostrar === 'liquid'">
+      <ion-card *ngFor="let alert of liquidAlerts" class="alerta-card" [ngClass]="alert.type">
+        <ion-card-header>
+          <ion-card-title>
+            <ion-icon [name]="alert.icon" class="alerta-icon"></ion-icon>
+            {{ alert.title }}
+          </ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <p>{{ alert.message }}</p>
+          <p class="tiempo">
+            <ion-icon name="time-outline"></ion-icon>
+            {{ alert.timestamp | date:'medium' }}
+          </p>
+        </ion-card-content>
+      </ion-card>
+    </div>
+
+    <!-- Alertas de otros sensores -->
+    <div *ngIf="mostrar === 'other'">
+      <ion-card *ngFor="let alert of otherAlerts" class="alerta-card" [ngClass]="alert.type">
+        <ion-card-header>
+          <ion-card-title>
+            <ion-icon [name]="alert.icon" class="alerta-icon"></ion-icon>
+            {{ alert.title }}
+          </ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <p>{{ alert.message }}</p>
+          <p class="tiempo">
+            <ion-icon name="time-outline"></ion-icon>
+            {{ alert.timestamp | date:'medium' }}
+          </p>
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </div>
+</ion-content>

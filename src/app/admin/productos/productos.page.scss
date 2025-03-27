@@ -1,0 +1,178 @@
+/* Estilos unificados */
+.productos-content {
+  --background: #1976d2;
+  --padding-top: 0;
+}
+
+.header-title {
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+  padding: 12px 0;
+  margin: 0;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.titulo-productos {
+  font-size: 20px !important;
+}
+
+.producto-card {
+  background: #f5f5f5;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 8px 20px;
+}
+
+.producto-header {
+  background: #34a853;
+  color: #ffffff;
+  border-radius: 15px 15px 0 0;
+  padding: 12px 16px;
+
+  ion-card-title {
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+}
+
+.producto-content {
+  background: #ffffff;
+  border-radius: 0 0 10px 10px;
+  padding: 15px;
+}
+
+/* Formulario */
+.form-item {
+  --background: #ffffff;
+  --border-radius: 8px;
+  --padding-start: 10px;
+  --padding-end: 10px;
+  margin-bottom: 15px;
+  --inner-border-width: 0;
+
+  ion-label {
+    color: #1e3a8a;
+    font-weight: 500;
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+}
+
+/* Campos de entrada mejorados */
+.input-field {
+  --background: #f8f9fa;
+  --color: #1e3a8a;
+  --border-width: 1px;
+  --border-style: solid;
+  --border-color: #d1d5db;
+  --border-radius: 8px;
+  font-size: 14px;
+  --padding-start: 10px;
+  --padding-end: 10px;
+  margin-top: 6px;
+}
+
+/* Lista de productos */
+ion-list {
+  background: transparent;
+  padding: 0;
+}
+
+.producto-item {
+  --background: transparent;
+  --border-radius: 8px;
+  margin-bottom: 12px;
+  --padding-start: 0;
+  --padding-end: 0;
+  --inner-border-width: 0;
+  --border-width: 0;
+}
+
+/* Contenedor de cada producto */
+.producto-box {
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.producto-info {
+  h2 {
+    color: #1e3a8a;
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 6px;
+  }
+
+  .descripcion {
+    color: #555;
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+
+  .datos-secundarios {
+    display: flex;
+    gap: 16px;
+
+    span {
+      font-size: 14px;
+
+      &.precio {
+        color: #2ecc71;
+        font-weight: bold;
+      }
+
+      &.stock {
+        color: #666;
+      }
+    }
+  }
+}
+
+/* Botones */
+.btn-agregar {
+  --background: #4285f4;
+  --color: #ffffff;
+  --border-radius: 8px;
+  font-weight: bold;
+  text-transform: uppercase;
+  --box-shadow: 0 2px 4px rgba(66, 133, 244, 0.2);
+  margin-top: 10px;
+}
+
+.botones-accion {
+  display: flex;
+  gap: 4px;
+
+  ion-button {
+    --padding-start: 0;
+    --padding-end: 0;
+    width: 36px;
+    height: 36px;
+    margin: 0;
+
+    ion-icon {
+      font-size: 20px;
+    }
+  }
+
+  .btn-editar {
+    --color: #34a853;
+  }
+
+  .btn-eliminar {
+    --color: #ea4335;
+  }
+}
+
+/* Efectos hover */
+ion-button:hover {
+  transform: scale(1.05);
+  transition: transform 0.2s ease;
+}

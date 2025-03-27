@@ -1,0 +1,54 @@
+<ion-content class="promociones-content">
+  <!-- Título -->
+  <div class="promociones-header">
+    <h1>PROMOCIONES</h1>
+    <p>Aprovecha nuestras ofertas especiales en lavados y productos.</p>
+  </div>
+
+  <!-- Botones de filtro -->
+  <div class="filtro-botones">
+    <ion-segment (ionChange)="cambiarFiltro($event)" value="productos">
+      <ion-segment-button value="productos">
+        <ion-label>Productos</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="lavados">
+        <ion-label>Servicios de Lavado</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+  <!-- Lista de promociones -->
+  <div class="promociones-list">
+    <!-- Promociones de Productos -->
+    <div *ngIf="mostrar === 'productos'">
+      <ion-card *ngFor="let promotion of promotionsProductos" class="promocion">
+        <ion-card-header>
+          <ion-card-title>¡Producto con Descuento!</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <p>Descuento del {{ promotion.discount }}% en {{ promotion.productId?.nombre }}.</p>
+          <p class="valido">
+            <ion-icon name="calendar-outline"></ion-icon>
+            Válido: {{ promotion.startDate | date }} - {{ promotion.endDate | date }}
+          </p>
+        </ion-card-content>
+      </ion-card>
+    </div>
+
+    <!-- Promociones de Lavados -->
+    <div *ngIf="mostrar === 'lavados'">
+      <ion-card *ngFor="let promotion of promotionsLavados" class="promocion">
+        <ion-card-header>
+          <ion-card-title>¡Lavado con Descuento!</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <p>Descuento del {{ promotion.discount }}% en lavado {{ promotion.washType }}.</p>
+          <p class="valido">
+            <ion-icon name="calendar-outline"></ion-icon>
+            Válido: {{ promotion.startDate | date }} - {{ promotion.endDate | date }}
+          </p>
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </div>
+</ion-content>

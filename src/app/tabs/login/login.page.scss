@@ -1,0 +1,162 @@
+/* Fondo de ion-content */
+.login-content {
+  --background: linear-gradient(to bottom, #34a853 50%, #f1f2f6 50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Contenedor adicional para centrar el contenido */
+.login-container {
+  width: 100%;
+  max-width: 350px; /* Ancho máximo para móvil */
+  padding: 16px; /* Añadimos padding para márgenes laterales */
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+
+  /* Ajustes para escritorio (lg) */
+  @media (min-width: 992px) {
+    max-width: 500px; /* Ancho máximo para escritorio */
+    padding: 0; /* Eliminamos el padding en escritorio */
+    margin-left: 150px; /* Aumenta este valor para moverlo más hacia la derecha */
+  }
+}
+
+/* Tarjeta de login */
+.login-card {
+  border-radius: 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  background: #ffffff;
+  width: 100%;
+  max-width: 400px; /* Ancho máximo para móvil */
+
+  /* Ajustes para móvil (xs) */
+  @media (max-width: 768px) {
+    margin-left: 0; /* Eliminamos el margen izquierdo */
+    margin-right: 0; /* Eliminamos el margen derecho */
+    margin-top: 20%; /* Mueve el contenedor más hacia abajo en móvil */
+  }
+
+  /* Ajustes para escritorio (lg) */
+  @media (min-width: 992px) {
+    max-width: 600px; /* Hacemos el contenedor más ancho en escritorio */
+    width: 100%; /* Ocupa el 100% del ancho disponible hasta el max-width */
+    margin-top: 250px; /* Mueve el contenedor más hacia abajo en escritorio */
+    margin-left: 50px; /* Ajusta este valor para moverlo hacia la derecha */
+    margin-right: auto; /* Mantiene el margen derecho automático */
+    padding-bottom: 40px; /* Hace el contenedor más largo */
+  }
+}
+
+/* Encabezado */
+.login-header {
+  background: #34a853;
+  padding: 20px;
+  text-align: center;
+}
+
+.login-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 8px;
+
+  /* Ajustes para móvil (xs) */
+  @media (max-width: 768px) {
+    font-size: 22px;
+  }
+}
+
+.login-subtitle {
+  font-size: 14px;
+  color: #e5e7eb;
+  margin-bottom: 0;
+
+  /* Ajustes para móvil (xs) */
+  @media (max-width: 768px) {
+    font-size: 12px;
+  }
+}
+
+/* Cuerpo del formulario */
+.login-body {
+  padding: 20px;
+}
+
+/* Campos del formulario */
+.form-item {
+  margin-bottom: 20px;
+}
+
+.form-label {
+  color: #1e3a8a;
+  font-weight: 500;
+  font-size: 14px;
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* Estilos para ion-input */
+.form-input {
+  --color: #1e3a8a; /* Color del texto */
+  --padding-start: 15px;
+  --padding-end: 15px;
+  --border-radius: 10px;
+  --background: #f9fafb; /* Fondo del input */
+  --border-width: 1px;
+  --border-style: solid;
+  --border-color: #d1d5db; /* Color del borde */
+  --padding-top: 12px;
+  --padding-bottom: 12px;
+  font-size: 14px;
+  --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+/* Estilos para ion-item (evita el fondo negro) */
+ion-item {
+  --background: transparent; /* Fondo transparente */
+  --padding-start: 0;
+  --padding-end: 0;
+  --inner-padding-end: 0;
+}
+
+/* Botón de Sign In */
+.submit-button {
+  --background: #34a853;
+  --background-activated: #2e8b47;
+  --background-focused: #2e8b47;
+  --background-hover: #2e8b47;
+  --color: #ffffff;
+  --border-radius: 10px;
+  margin-top: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  --box-shadow: 0 4px 6px rgba(52, 168, 83, 0.2);
+}
+
+.submit-button[disabled] {
+  --background: #9ca3af;
+  --color: #ffffff;
+  --box-shadow: none;
+}
+
+/* Enlace "Forgot Password" */
+.forgot-password {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.forgot-link {
+  color: #3b82f6;
+  font-size: 12px;
+  text-decoration: none;
+}
+
+.forgot-link:hover {
+  text-decoration: underline;
+}

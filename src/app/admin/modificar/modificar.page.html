@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="header-title">CONFIGURACIÓN GENERAL</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>AJUSTES DE PRECIOS Y HORARIOS</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <form [formGroup]="priceScheduleForm" (ngSubmit)="onSubmit()">
+        <ion-item>
+          <ion-label position="floating">Precio Sedan</ion-label>
+          <ion-input type="number" formControlName="sedanPrice"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Precio SUV</ion-label>
+          <ion-input type="number" formControlName="suvPrice"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Precio Pickup</ion-label>
+          <ion-input type="number" formControlName="pickupPrice"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Hora de Apertura</ion-label>
+          <ion-input type="time" formControlName="openingTime"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Hora de Cierre</ion-label>
+          <ion-input type="time" formControlName="closingTime"></ion-input>
+        </ion-item>
+
+        <ion-button expand="full" type="submit" [disabled]="priceScheduleForm.invalid">Guardar Cambios</ion-button>
+      </form>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Tabla de precios y horarios -->
+  <div class="price-schedule-table">
+    <ion-item>
+      <ion-label>Precio Sedan:</ion-label>
+      <ion-text>{{ currentPriceSchedule?.sedanPrice || 'N/A' }}</ion-text>
+    </ion-item>
+    <ion-item>
+      <ion-label>Precio SUV:</ion-label>
+      <ion-text>{{ currentPriceSchedule?.suvPrice || 'N/A' }}</ion-text>
+    </ion-item>
+    <ion-item>
+      <ion-label>Precio Pickup:</ion-label>
+      <ion-text>{{ currentPriceSchedule?.pickupPrice || 'N/A' }}</ion-text>
+    </ion-item>
+    <ion-item>
+      <ion-label>Hora de Apertura:</ion-label>
+      <ion-text>{{ currentPriceSchedule?.openingTime || 'N/A' }}</ion-text>
+    </ion-item>
+    <ion-item>
+      <ion-label>Hora de Cierre:</ion-label>
+      <ion-text>{{ currentPriceSchedule?.closingTime || 'N/A' }}</ion-text>
+    </ion-item>
+  </div>
+</ion-content>

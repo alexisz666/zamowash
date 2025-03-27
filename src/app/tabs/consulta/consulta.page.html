@@ -1,0 +1,47 @@
+<ion-content class="ion-padding" [style.background]="'#34A853'">
+  <!-- Título principal -->
+  <div class="header">
+    <h1 class="titulo-pequeno">HORARIOS Y COSTOS</h1> <!-- Convertido a mayúsculas -->
+  </div>
+
+  <!-- Contenedor único para horarios y costos -->
+  <div class="section combined">
+    <!-- Reloj gigante -->
+    <div class="reloj-gigante">
+      <ion-icon name="time-outline" class="reloj-icon"></ion-icon>
+    </div>
+
+    <!-- Horarios -->
+    <div class="horario-info">
+      <div class="horario-item">
+        <p class="dias">ZAMOWASH TODOS LOS DIAS</p>
+        <p class="time">{{ priceSchedule.openingTime || '9:00 AM' }} - {{ priceSchedule.closingTime || '5:00 PM' }}</p>
+      </div>
+    </div>
+
+    <!-- Costos -->
+    <div class="costos">
+      <div class="costo-item">
+        <div class="item-info">
+          <ion-icon name="car-outline" class="item-icon"></ion-icon> <!-- Icono para Sedan -->
+          <p class="vehicle-type">SEDAN</p>
+        </div>
+        <p class="precio">${{ priceSchedule.sedanPrice || '140' }}</p>
+      </div>
+      <div class="costo-item">
+        <div class="item-info">
+          <ion-icon name="car-sport-outline" class="item-icon"></ion-icon> <!-- Icono para SUV -->
+          <p class="vehicle-type">SUV</p>
+        </div>
+        <p class="precio">${{ priceSchedule.suvPrice || '180' }}</p>
+      </div>
+      <div class="costo-item">
+        <div class="item-info">
+          <ion-icon name="car-sharp" class="item-icon"></ion-icon> <!-- Icono para Pickup -->
+          <p class="vehicle-type">PICKUP</p>
+        </div>
+        <p class="precio">${{ priceSchedule.pickupPrice || '220' }}</p>
+      </div>
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,178 @@
+.dashboard-content {
+  --background: #1976d2; /* Color de fondo azul */
+  position: relative; /* Para posicionar el botón de cerrar sesión */
+}
+
+.logout-button-container {
+  position: absolute; /* Posición absoluta para el botón */
+  top: 10px; /* Distancia desde la parte superior */
+  right: 10px; /* Distancia desde la derecha */
+  z-index: 10; /* Asegura que el botón esté por encima de otros elementos */
+}
+
+.logout-button {
+  --color: #ffffff; /* Color del ícono (blanco) */
+  --background: transparent; /* Fondo transparente */
+  --padding-start: 0; /* Elimina el padding izquierdo */
+  --padding-end: 0; /* Elimina el padding derecho */
+  --padding-top: 0; /* Elimina el padding superior */
+  --padding-bottom: 0; /* Elimina el padding inferior */
+  width: 40px; /* Ancho del botón */
+  height: 40px; /* Altura del botón */
+  border-radius: 50%; /* Forma circular */
+  transition: background-color 0.3s ease; /* Transición suave */
+
+  ion-icon {
+    font-size: 24px; /* Tamaño del ícono */
+  }
+
+  &:hover {
+    --background: rgba(255, 255, 255, 0.1); /* Fondo sutil al pasar el mouse */
+  }
+}
+
+.main-content {
+  padding: 8px;
+}
+
+.welcome-section {
+  text-align: center;
+  margin-bottom: 4px;
+}
+
+.welcome-title {
+  font-size: 20px; /* Tamaño por defecto para móvil */
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 4px;
+}
+
+.welcome-text {
+  font-size: 14px; /* Tamaño por defecto para móvil */
+  color: #e0e0e0;
+  margin-bottom: 4px;
+}
+
+.start-wash-section {
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.action-button {
+  --background: #ffffff;
+  --color: #1976d2; /* Color de texto */
+  --border-radius: 20px;
+  --padding-top: 8px;
+  --padding-bottom: 8px;
+  font-size: 14px; /* Tamaño por defecto para móvil */
+  margin-bottom: 4px;
+}
+
+.services-section {
+  margin-top: 4px;
+}
+
+.services-title {
+  font-size: 18px; /* Tamaño por defecto para móvil */
+  font-weight: bold;
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 4px;
+}
+
+.services-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
+}
+
+/* Contenedor de servicios */
+.service-item {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 8px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex: 1 1 calc(50% - 2px); /* Ajusta el tamaño según sea necesario */
+  box-sizing: border-box;
+  min-height: 130px; /* Altura mínima ajustada para que todos tengan el mismo tamaño */
+  display: flex; /* Para centrar el contenido */
+  flex-direction: column; /* Para apilar el contenido verticalmente */
+  justify-content: center; /* Centra el contenido verticalmente */
+  align-items: center; /* Centra el contenido horizontalmente */
+}
+
+/* Efecto hover */
+.service-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.service-icon {
+  font-size: 24px; /* Tamaño del ícono */
+  color: #1976d2; /* Color del ícono */
+  margin-bottom: 4px; /* Espacio debajo del ícono */
+}
+
+.service-title {
+  font-size: 14px; /* Tamaño por defecto para móvil */
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+.service-text {
+  font-size: 12px; /* Tamaño por defecto para móvil */
+  color: #555;
+}
+
+/* Ajustes para escritorio (lg) */
+@media (min-width: 992px) {
+  .welcome-title {
+    font-size: 28px; /* Aumentado para escritorio */
+  }
+
+  .welcome-text {
+    font-size: 18px; /* Aumentado para escritorio */
+  }
+
+  .action-button {
+    font-size: 16px; /* Aumentado para escritorio */
+  }
+
+  .services-title {
+    font-size: 22px; /* Aumentado para escritorio */
+  }
+
+  .services-grid {
+    display: flex;
+    justify-content: center; /* Centra los elementos horizontalmente */
+    gap: 60px; /* Aumenta el espacio entre los contenedores (ajustado a 60px) */
+  }
+
+  .service-item {
+    flex: 0 1 250px; /* Tamaño fijo para los contenedores (más grandes) */
+    padding: 24px; /* Más padding para que se vean más grandes */
+    min-height: 130px; /* Altura fija para que todos tengan el mismo tamaño */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra el contenido verticalmente */
+    align-items: center; /* Centra el contenido horizontalmente */
+    margin: 30px; /* Espacio adicional alrededor de cada contenedor (ajustado a 30px) */
+  }
+
+  .service-icon {
+    font-size: 40px; /* Ícono más grande */
+    margin-bottom: 16px; /* Más espacio debajo del ícono */
+  }
+
+  .service-title {
+    font-size: 20px; /* Aumentado para escritorio */
+    margin-bottom: 8px; /* Más espacio debajo del título */
+  }
+
+  .service-text {
+    font-size: 16px; /* Aumentado para escritorio */
+  }
+}

@@ -1,0 +1,17 @@
+/* Inferior */
+.admin-tab-bar {
+    --background: #f9f9f9; /* Fondo claro para el admin */
+    --color: #7f8c8d; /* Color de los íconos no seleccionados */
+    --color-selected:#1976d2; /* Color de los íconos seleccionados */
+    border-top: 1px solid #e0e0e0;
+  
+    ion-tab-button {
+      &.active-tab {
+        ion-icon, ion-label {
+          color: var(--color-selected);
+          font-weight: 500;
+        }
+      }
+    }
+  }
+  

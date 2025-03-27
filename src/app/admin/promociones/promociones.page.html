@@ -1,0 +1,91 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>PROMOCIONES</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="promotions-content">
+  <div class="promotions-container">
+    <!-- Contenedor para crear promociones -->
+    <ion-card class="promotions-card">
+      <ion-card-header class="promotions-header">
+        <ion-card-title class="promotions-title">Crear Promoción</ion-card-title>
+      </ion-card-header>
+      <ion-card-content class="promotions-body">
+        <form [formGroup]="promotionForm" (ngSubmit)="onSubmit()">
+          <ion-item>
+            <ion-label>Tipo de Promoción</ion-label>
+            <ion-select formControlName="type" (ionChange)="onPromotionTypeChange($event)">
+              <ion-select-option value="product">Producto</ion-select-option>
+              <ion-select-option value="wash">Lavado</ion-select-option>
+            </ion-select>
+          </ion-item>
+
+          <ion-item *ngIf="promotionType === 'product'">
+            <ion-label>Producto</ion-label>
+            <ion-select formControlName="productId">
+              <ion-select-option *ngFor="let product of products" [value]="product._id">
+                {{ product.nombre }}
+              </ion-select-option>
+            </ion-select>
+          </ion-item>
+
+          <ion-item *ngIf="promotionType === 'wash'">
+            <ion-label>Tipo de Lavado</ion-label>
+            <ion-select formControlName="washType">
+              <ion-select-option value="sedan">Sedan</ion-select-option>
+              <ion-select-option value="suv">SUV</ion-select-option>
+              <ion-select-option value="pickup">Pickup</ion-select-option>
+            </ion-select>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>Descuento (%)</ion-label>
+            <ion-input type="number" formControlName="discount"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>Fecha de Inicio</ion-label>
+            <ion-input type="date" formControlName="startDate"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>Fecha de Fin</ion-label>
+            <ion-input type="date" formControlName="endDate"></ion-input>
+          </ion-item>
+
+          <ion-button expand="full" type="submit" [disabled]="promotionForm.invalid">
+            Crear Promoción
+          </ion-button>
+        </form>
+      </ion-card-content>
+    </ion-card>
+
+    <!-- Contenedor para promociones activas -->
+    <ion-card class="promotions-card">
+      <ion-card-header class="promotions-header">
+        <ion-card-title class="promotions-title">Promociones Activas</ion-card-title>
+      </ion-card-header>
+      <ion-card-content class="promotions-body">
+        <div class="promotions-list">
+          <div *ngFor="let promotion of promotions" class="promotion-item">
+            <h2>{{ promotion.type === 'product' ? 'Producto' : 'Lavado' }}</h2>
+            <p *ngIf="promotion.type === 'product'">Producto: {{ promotion.productId?.nombre }}</p>
+            <p *ngIf="promotion.type === 'wash'">Tipo de Lavado: {{ promotion.washType }}</p>
+            <p>Descuento: {{ promotion.discount }}%</p>
+            <p>Fecha de Inicio: {{ promotion.startDate | date }}</p>
+            <p>Fecha de Fin: {{ promotion.endDate | date }}</p>
+            <div class="promotion-buttons">
+              <ion-button color="warning" (click)="editPromotion(promotion)">
+                <ion-icon name="pencil-outline"></ion-icon>
+              </ion-button>
+              <ion-button color="danger" (click)="deletePromotion(promotion._id)">
+                <ion-icon name="trash-outline"></ion-icon>
+              </ion-button>
+            </div>
+          </div>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

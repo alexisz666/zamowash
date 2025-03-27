@@ -1,0 +1,47 @@
+<ion-content class="login-content">
+  <!-- Contenedor principal -->
+  <ion-grid class="ion-justify-content-center ion-align-items-center ion-text-center" style="height: 100%;">
+    <ion-row class="ion-justify-content-center">
+      <ion-col size="12" size-lg="6">
+        <!-- Contenedor adicional para centrar el contenido -->
+        <div class="login-container">
+          <!-- Tarjeta de login -->
+          <ion-card class="login-card">
+            <!-- Encabezado -->
+            <ion-card-header class="login-header">
+              <ion-card-title class="login-title">WELCOME TO ZAMOWASH</ion-card-title>
+              <ion-card-subtitle class="login-subtitle">Enter your details to continue</ion-card-subtitle>
+            </ion-card-header>
+
+            <!-- Cuerpo del formulario -->
+            <ion-card-content class="login-body">
+              <form [formGroup]="formularioLogin" (ngSubmit)="onSubmit()">
+                <!-- Campo de Email -->
+                <ion-item class="form-item">
+                  <ion-label class="form-label" position="stacked">Email</ion-label>
+                  <ion-input formControlName="email" type="email" class="form-input"></ion-input>
+                </ion-item>
+
+                <!-- Campo de Password -->
+                <ion-item class="form-item">
+                  <ion-label class="form-label" position="stacked">Password</ion-label>
+                  <ion-input formControlName="password" type="password" class="form-input"></ion-input>
+                </ion-item>
+
+                <!-- Botón de Sign In -->
+                <ion-button expand="full" type="submit" class="submit-button">
+                  Sign In
+                </ion-button>
+              </form>
+
+              <!-- Enlace para "Forgot Password" -->
+              <div class="forgot-password">
+                <a href="#" class="forgot-link">Forgot Password?</a>
+              </div>
+            </ion-card-content>
+          </ion-card>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,71 @@
+<ion-content class="dashboard-content">
+  <!-- Botón de cerrar sesión -->
+  <div class="logout-button-container">
+    <ion-button class="logout-button" fill="clear" (click)="cerrarSesion()">
+      <ion-icon name="log-out"></ion-icon>
+    </ion-button>
+  </div>
+
+  <!-- Contenido principal -->
+  <ion-grid class="main-content">
+    <!-- Mensaje de bienvenida -->
+    <ion-row class="welcome-section">
+      <ion-col>
+        <h1 class="welcome-title">¡Bienvenido, Administrador!</h1>
+        <p class="welcome-text">Gestiona y supervisa el sistema de ZamoWash.</p>
+      </ion-col>
+    </ion-row>
+
+    <!-- Botón para ver estadísticas -->
+    <ion-row class="start-wash-section">
+      <ion-col>
+        <ion-button expand="block" class="action-button" size="small" shape="round" (click)="verEstadisticas()">
+          <ion-icon name="stats-chart" slot="start"></ion-icon>
+          Ver Estadísticas
+        </ion-button>
+      </ion-col>
+    </ion-row>
+
+    <!-- Sección de herramientas -->
+    <ion-row class="services-section">
+      <ion-col>
+        <h2 class="services-title">Herramientas de Administración</h2>
+        <ion-grid class="services-grid">
+          <ion-row>
+            <ion-col size="6" (click)="navigateToModificar()">
+              <ion-card class="service-item">
+                <ion-icon name="create" class="service-icon"></ion-icon>
+                <h3 class="service-title">Modificar</h3>
+                <p class="service-text">Editar información del sistema</p>
+              </ion-card>
+            </ion-col>
+
+            <ion-col size="6" (click)="navigateToPromociones()">
+              <ion-card class="service-item">
+                <ion-icon name="pricetag" class="service-icon"></ion-icon>
+                <h3 class="service-title">Promociones</h3>
+                <p class="service-text">Subir o editar ofertas</p>
+              </ion-card>
+            </ion-col>
+
+            <ion-col size="6" (click)="navigateToSoporte()">
+              <ion-card class="service-item">
+                <ion-icon name="help-circle" class="service-icon"></ion-icon>
+                <h3 class="service-title">Soporte</h3>
+                <p class="service-text">Verificar y responder consultas</p>
+              </ion-card>
+            </ion-col>
+
+            <ion-col size="6" (click)="navigateToReservas()">
+              <ion-card class="service-item">
+                <ion-icon name="calendar" class="service-icon"></ion-icon>
+                <h3 class="service-title">Reservas</h3>
+                <p class="service-text">Gestionar reservas</p>
+              </ion-card>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

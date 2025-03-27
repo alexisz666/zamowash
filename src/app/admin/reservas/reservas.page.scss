@@ -1,0 +1,155 @@
+/* Título más pequeño */
+.titulo-reservas {
+  font-size: 20px !important;
+}
+
+/* Información en línea */
+.datos-en-linea {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-top: 6px;
+
+  span {
+    white-space: nowrap;
+    font-size: 14px;
+    
+    &.cliente, &.fecha, &.hora {
+      color: #666; /* Color gris para estos elementos */
+    }
+  }
+}
+
+/* Estados */
+.estado {
+  font-weight: bold;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.estado-pendiente {
+  color: #f39c12; /* Naranja para pendientes */
+  background-color: rgba(243, 156, 18, 0.1);
+}
+
+.estado-aceptada {
+  color: #2ecc71; /* Verde más vivo para aceptadas */
+  background-color: rgba(46, 204, 113, 0.1);
+}
+
+.estado-rechazada {
+  color: #e74c3c; /* Rojo más vivo para rechazadas */
+  background-color: rgba(231, 76, 60, 0.1);
+}
+
+/* Botones */
+.botones-accion {
+  display: flex;
+  gap: 8px;
+  min-width: 80px;
+  justify-content: flex-end;
+
+  ion-button {
+    --padding-start: 0;
+    --padding-end: 0;
+    width: 32px;
+    height: 32px;
+    margin: 0;
+
+    ion-icon {
+      font-size: 24px;
+    }
+  }
+
+  .accion-realizada {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+
+    ion-icon {
+      font-size: 24px;
+    }
+  }
+}
+
+/* Mantenemos todos tus estilos originales */
+ion-content {
+  --background: #1976d2;
+  --padding-top: 8px;
+}
+
+ion-header {
+  background: #1976d2;
+  
+  ion-toolbar {
+    --background: transparent;
+    --border-width: 0 !important;
+    --border-style: none !important;
+    padding-top: 10px;
+
+    &::after {
+      display: none !important;
+    }
+  }
+}
+
+.header-title {
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+  padding: 12px 0;
+  margin: 0;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+ion-card {
+  background: #f5f5f5;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 10px 20px;
+}
+
+ion-card-header {
+  background: #34a853;
+  color: #ffffff;
+  border-radius: 15px 15px 0 0;
+  padding: 16px;
+}
+
+ion-card-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffffff;
+  text-align: center;
+}
+
+ion-card-content {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 15px;
+  margin-top: 10px;
+}
+
+ion-item {
+  --background: #ffffff;
+  --border-radius: 8px;
+  --padding-start: 10px;
+  --padding-end: 10px;
+  margin-bottom: 15px;
+
+  ion-label {
+      color: #1e3a8a;
+      font-weight: 500;
+      font-size: 14px;
+      margin-bottom: 8px;
+  }
+}
+
+ion-list {
+  background: transparent;
+}

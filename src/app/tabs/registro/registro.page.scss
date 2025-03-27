@@ -1,0 +1,172 @@
+.register-content {
+  --background: linear-gradient(to bottom, #34A853 50%, #F1F2F6 50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.register-container {
+  width: 100%;
+  max-width: 350px; /* Ancho máximo para móvil */
+  padding: 15px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+
+  /* Ajustes para escritorio (lg) */
+  @media (min-width: 992px) {
+    max-width: 500px; /* Mantenemos el ancho máximo para escritorio */
+    padding: 0; /* Eliminamos el padding en escritorio */
+    margin-left: 700px; /* Ajusta este valor para mover el contenedor un poco más a la izquierda */
+  }
+}
+
+.register-card {
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background: #ffffff;
+  width: 100%;
+
+  /* Ajustes para escritorio (lg) */
+  @media (min-width: 992px) {
+    max-width: 600px; /* Hacemos el contenedor más ancho en escritorio */
+    margin-top: 100px; /* Ajustamos el margen superior */
+    padding-bottom: 40px; /* Aumentamos el padding inferior */
+  }
+}
+
+.register-header {
+  background: #34A853;
+  padding: 15px;
+  text-align: center;
+
+  /* Ajustes para escritorio (lg) */
+  @media (min-width: 992px) {
+    padding: 20px; /* Aumentamos el padding en escritorio */
+  }
+}
+
+.register-title {
+  font-size: 22px;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 5px;
+
+  /* Ajustes para escritorio (lg) */
+  @media (min-width: 992px) {
+    font-size: 24px; /* Aumentamos el tamaño del título */
+  }
+}
+
+.register-subtitle {
+  font-size: 12px;
+  color: #e5e7eb;
+  margin-bottom: 0;
+
+  /* Ajustes para escritorio (lg) */
+  @media (min-width: 992px) {
+    font-size: 14px; /* Aumentamos el tamaño del subtítulo */
+  }
+}
+
+.register-body {
+  background: #ffffff;
+  padding: 15px;
+
+  /* Ajustes para escritorio (lg) */
+  @media (min-width: 992px) {
+    padding: 20px; /* Aumentamos el padding en escritorio */
+  }
+}
+
+.form-item {
+  margin-bottom: 15px;
+  position: relative; // Para posicionar el ícono de mostrar/ocultar contraseña
+}
+
+.form-label {
+  color: #1e3a8a;
+  font-weight: 500;
+  font-size: 13px;
+  display: block;
+  margin-bottom: 5px;
+
+  /* Ajustes para escritorio (lg) */
+  @media (min-width: 992px) {
+    font-size: 14px; /* Aumentamos el tamaño de la etiqueta */
+  }
+}
+
+.form-input {
+  --color: #1e3a8a;
+  --padding-start: 10px;
+  --padding-end: 10px;
+  --border-radius: 8px;
+  --background: #f9fafb;
+  --border-width: 1px;
+  --border-style: solid;
+  --border-color: #d1d5db;
+  --padding-top: 8px;
+  --padding-bottom: 8px;
+  font-size: 13px;
+  --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%;
+
+  /* Ajustes para escritorio (lg) */
+  @media (min-width: 992px) {
+    font-size: 14px; /* Aumentamos el tamaño del texto */
+  }
+}
+
+.toggle-password {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #888;
+  cursor: pointer;
+}
+
+.submit-button {
+  --background: #34a853;
+  --background-activated: #2e8b47;
+  --background-focused: #2e8b47;
+  --background-hover: #2e8b47;
+  --color: #ffffff;
+  --border-radius: 8px;
+  margin-top: 15px;
+  font-weight: bold;
+  text-transform: uppercase;
+  --box-shadow: 0 4px 6px rgba(52, 168, 83, 0.2);
+
+  /* Ajustes para escritorio (lg) */
+  @media (min-width: 992px) {
+    margin-top: 20px; /* Aumentamos el margen superior */
+  }
+}
+
+.forgot-password {
+  text-align: center;
+  margin-top: 10px;
+
+  /* Ajustes para escritorio (lg) */
+  @media (min-width: 992px) {
+    margin-top: 15px; /* Aumentamos el margen superior */
+  }
+}
+
+.forgot-link {
+  color: #3b82f6;
+  font-size: 12px;
+  text-decoration: none;
+
+  /* Ajustes para escritorio (lg) */
+  @media (min-width: 992px) {
+    font-size: 14px; /* Aumentamos el tamaño del enlace */
+  }
+}

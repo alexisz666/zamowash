@@ -1,0 +1,175 @@
+.reservar-content {
+  --background: #34a853; /* Fondo verde sólido */
+  display: flex;
+  flex-direction: column; /* Cambiar a columna para alinear verticalmente */
+  align-items: center; /* Centrar horizontalmente */
+  padding: 16px; /* Espaciado alrededor del contenido */
+}
+
+.reservar-container {
+  width: 100%; /* Asegúrate de que ocupe todo el ancho disponible */
+  max-width: 600px; /* Ancho máximo */
+  margin: 0 auto; /* Centrar el contenedor */
+  margin-bottom: 16px; /* Espacio inferior */
+}
+
+.reservar-card {
+  border-radius: 12px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+  background: #ffffff; /* Fondo blanco */
+}
+
+.reservar-header {
+  background: #34a853; /* Fondo verde */
+  padding: 16px; /* Espaciado interno */
+  text-align: center; /* Centrar texto */
+}
+
+.reservar-title {
+  font-size: 22px; /* Tamaño de fuente */
+  font-weight: bold; /* Negrita */
+  color: #ffffff; /* Color blanco */
+  margin-bottom: 5px; /* Espacio inferior */
+}
+
+.reservar-subtitle {
+  font-size: 12px; /* Tamaño de fuente */
+  color: #e5e7eb; /* Color gris claro */
+  margin-bottom: 0; /* Sin margen inferior */
+}
+
+.reservar-body {
+  padding: 16px; /* Espaciado interno */
+}
+
+/* Estilos para los elementos del formulario */
+.form-item {
+  margin-bottom: 16px; /* Espacio entre elementos del formulario */
+}
+
+.form-label {
+  color: #1e3a8a; /* Color del texto */
+  font-weight: 500; /* Peso de la fuente */
+  font-size: 14px; /* Tamaño de la fuente */
+  display: block; /* Mostrar como bloque */
+  margin-bottom: 8px; /* Espacio inferior */
+}
+
+.form-input {
+  --color: #1e3a8a; /* Color del texto */
+  --padding-start: 12px; /* Espaciado interno */
+  --padding-end: 12px; /* Espaciado interno */
+  --border-radius: 8px; /* Bordes redondeados */
+  --background: #f9fafb; /* Fondo del input */
+  --border-width: 1px; /* Ancho del borde */
+  --border-style: solid; /* Estilo del borde */
+  --border-color: #d1d5db; /* Color del borde */
+  --padding-top: 8px; /* Espaciado interno superior */
+  --padding-bottom: 8px; /* Espaciado interno inferior */
+  font-size: 14px; /* Tamaño de la fuente */
+  --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra */
+  width: 100%; /* Ancho completo */
+}
+
+.form-input:focus {
+  --border-color: #3b82f6; /* Color del borde al enfocar */
+  --box-shadow: 0 2px 8px rgba(59, 130, 246, 0.2); /* Sombra al enfocar */
+}
+
+.submit-button {
+  --background: #4285f4; /* Color de fondo */
+  --color: #ffffff; /* Color del texto */
+  --border-radius: 8px; /* Bordes redondeados */
+  margin-top: 16px; /* Espacio superior */
+  font-weight: bold; /* Negrita */
+  text-transform: uppercase; /* Texto en mayúsculas */
+  --box-shadow: 0 4px 6px rgba(66, 133, 244, 0.2); /* Sombra */
+}
+
+.submit-button[disabled] {
+  --background: #9ca3af; /* Color de fondo deshabilitado */
+  --color: #ffffff; /* Color del texto deshabilitado */
+  --box-shadow: none; /* Sin sombra */
+}
+
+.submit-button:hover {
+  transform: scale(1.05); /* Efecto de escala al pasar el mouse */
+  transition: transform 0.2s ease-in-out; /* Transición suave */
+}
+/* Contenedor de Mis Reservas */
+.reservas-card {
+  border-radius: 12px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+  background: #ffffff; /* Fondo blanco */
+  margin-top: 16px; /* Espacio superior */
+}
+
+.reservas-header {
+  background: #34a853; /* Fondo verde */
+  padding: 16px; /* Espaciado interno */
+  text-align: center; /* Centrar texto */
+  border-radius: 12px 12px 0 0; /* Bordes redondeados solo arriba */
+}
+
+.reservas-title {
+  font-size: 22px; /* Tamaño de fuente */
+  font-weight: bold; /* Negrita */
+  color: #ffffff; /* Color blanco */
+  margin-bottom: 5px; /* Espacio inferior */
+}
+
+.reservas-body {
+  padding: 16px; /* Espaciado interno */
+}
+
+/* Estilos para la lista de reservas */
+.reservas-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px; /* Espacio entre reservas */
+}
+
+.reserva-item {
+  background: #ffffff; /* Fondo blanco */
+  border-radius: 12px; /* Bordes redondeados */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  padding: 16px; /* Espaciado interno */
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada al pasar el mouse */
+    transform: translateY(-2px); /* Efecto de elevación */
+  }
+}
+
+.reserva-item h2 {
+  font-size: 16px; /* Tamaño de fuente */
+  font-weight: bold; /* Negrita */
+  color: #1e3a8a; /* Color azul oscuro */
+  margin: 0; /* Sin margen */
+}
+
+.reserva-item p {
+  font-size: 14px; /* Tamaño de fuente */
+  color: #4b5563; /* Color gris oscuro */
+  margin: 0; /* Sin margen */
+}
+
+/* Estilos para los estados de reserva */
+.estado-enviada {
+  color: #34a853; /* Verde para "Solicitud enviada" */
+  font-weight: bold; /* Negrita */
+  text-transform: uppercase; /* Texto en mayúsculas */
+}
+
+.estado-aceptada {
+  color: #4285f4; /* Azul para "Aceptada" */
+  font-weight: bold; /* Negrita */
+  text-transform: uppercase; /* Texto en mayúsculas */
+}
+
+.estado-rechazada {
+  color: #ea4335; /* Rojo para "Rechazada" */
+  font-weight: bold; /* Negrita */
+  text-transform: uppercase; /* Texto en mayúsculas */
+}

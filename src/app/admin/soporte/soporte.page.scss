@@ -1,0 +1,123 @@
+/* Título consistente */
+.titulo-soporte {
+  font-size: 20px !important;
+}
+
+/* Intercambio email/name y estilos */
+.solicitud-header {
+  background: #34a853;
+  color: #ffffff;
+  border-radius: 15px 15px 0 0;
+  padding: 12px 16px;
+
+  /* CAMBIO 1: Email arriba del nombre */
+  .correo {
+    font-size: 14px;
+    color: #ffffff; /* Cambiado de amarillo a blanco */
+    opacity: 0.9;
+    margin-bottom: 4px;
+  }
+
+  .nombre {
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase; /* Nombre en mayúsculas */
+  }
+}
+
+/* (Mantengo todos tus otros estilos exactamente igual) */
+.soporte-content {
+  --background: #1976d2;
+  --padding-top: 0;
+}
+
+.header-title {
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+  padding: 12px 0;
+  margin: 0;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.solicitud-card {
+  background: #f5f5f5;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 8px 20px;
+}
+
+.solicitud-content {
+  background: #ffffff;
+  border-radius: 0 0 10px 10px;
+  padding: 15px;
+
+  .datos-en-linea {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 12px;
+
+    span {
+      white-space: nowrap;
+      font-size: 14px;
+
+      &.tipo, &.fecha {
+        color: #666;
+      }
+    }
+  }
+
+  .detalles, .respuesta {
+    color: #1e3a8a;
+    font-size: 14px;
+    margin-bottom: 12px;
+  }
+
+  .respuesta {
+    padding: 8px;
+    background-color: #f8f9fa;
+    border-radius: 6px;
+  }
+}
+
+.estado {
+  font-weight: bold;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.estado-pendiente {
+  color: #f39c12;
+  background-color: rgba(243, 156, 18, 0.1);
+}
+
+.estado-proceso {
+  color: #3498db;
+  background-color: rgba(52, 152, 219, 0.1);
+}
+
+.estado-resuelta {
+  color: #2ecc71;
+  background-color: rgba(46, 204, 113, 0.1);
+}
+
+.btn-responder {
+  --background: #4285f4;
+  --color: #ffffff;
+  --border-radius: 8px;
+  --padding-top: 10px;
+  --padding-bottom: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  --box-shadow: 0 2px 4px rgba(66, 133, 244, 0.2);
+  margin-top: 10px;
+
+  &:hover {
+    transform: scale(1.02);
+    transition: transform 0.2s ease;
+  }
+}

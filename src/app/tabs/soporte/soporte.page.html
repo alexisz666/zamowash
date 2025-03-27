@@ -1,0 +1,76 @@
+<ion-content class="soporte-content">
+  <!-- Contenedor del formulario de soporte -->
+  <div class="soporte-container">
+    <ion-card class="soporte-card">
+      <!-- Encabezado -->
+      <ion-card-header class="soporte-header">
+        <ion-card-title class="soporte-title">SOPORTE</ion-card-title>
+        <ion-card-subtitle class="soporte-subtitle">Completa el formulario para recibir asistencia.</ion-card-subtitle>
+      </ion-card-header>
+
+      <!-- Cuerpo del formulario -->
+      <ion-card-content class="soporte-body">
+        <form [formGroup]="formulario" (ngSubmit)="enviarFormulario()">
+          <!-- Campo de nombre -->
+          <div class="form-item">
+            <label class="form-label">Nombre</label>
+            <ion-input class="form-input" type="text" formControlName="nombre"></ion-input>
+          </div>
+
+          <!-- Campo de correo -->
+          <div class="form-item">
+            <label class="form-label">Correo Electrónico</label>
+            <ion-input class="form-input" type="email" formControlName="correo"></ion-input>
+          </div>
+
+          <!-- Campo de tipo de solicitud -->
+          <div class="form-item">
+            <label class="form-label">Tipo de Solicitud</label>
+            <ion-select class="form-input" formControlName="tipo" interface="action-sheet">
+              <ion-select-option value="consulta">Consulta</ion-select-option>
+              <ion-select-option value="queja">Queja</ion-select-option>
+              <ion-select-option value="sugerencia">Sugerencia</ion-select-option>
+            </ion-select>
+          </div>
+
+          <!-- Campo de detalles -->
+          <div class="form-item">
+            <label class="form-label">Detalles</label>
+            <ion-textarea class="form-input" formControlName="detalles" rows="5"></ion-textarea>
+          </div>
+
+          <!-- Botón de enviar -->
+          <ion-button expand="full" class="submit-button" type="submit" [disabled]="formulario.invalid">
+            Enviar
+          </ion-button>
+        </form>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+  <!-- Contenedor del estado de solicitudes -->
+  <div class="soporte-container" *ngIf="supportRequests.length > 0">
+    <ion-card class="soporte-card">
+      <ion-card-header class="soporte-header">
+        <ion-card-title class="soporte-title">Estado de Solicitudes</ion-card-title>
+      </ion-card-header>
+      <ion-card-content class="soporte-body">
+        <ion-list>
+          <div *ngFor="let request of supportRequests" class="solicitud-item">
+            <div class="solicitud-info">
+              <h2>{{ request.nombre }}</h2>
+              <p><strong>Correo:</strong> {{ request.correo }}</p>
+              <p><strong>Tipo:</strong> {{ request.tipo }}</p>
+              <p><strong>Detalles:</strong> {{ request.detalles }}</p>
+              <p>
+                <strong>Estado:</strong>
+                <ion-badge [color]="getEstadoColor(request.estado)">{{ request.estado }}</ion-badge>
+              </p>
+              <p><strong>Fecha:</strong> {{ request.fecha | date }}</p>
+            </div>
+          </div>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>
